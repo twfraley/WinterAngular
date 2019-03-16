@@ -5,7 +5,7 @@ import { RegisterUser } from '../models/RegisterUser';
 import { Token } from '../models/Token';
 import { Observable, Subject } from 'rxjs';
 
-const Api_Url = '';
+const Api_Url = 'https://westerosfantasyleague.azurewebsites.net';
 
 @Injectable({
   providedIn: 'root'

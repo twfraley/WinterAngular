@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { CreateCharacter } from '../models/CreateCharacter';
+import { CharacterDetail } from '../models/CharacterDetail';
 
-const ApiUrl = '';
+const ApiUrl = 'https://westerosfantasyleague.azurewebsites.net/api';
 
 @Injectable()
 
@@ -10,6 +12,22 @@ export class CharacterService {
 
     getCharacters() {
         return this._http.get(`${ApiUrl}/Characters`, { headers: this.getHeaders() });
+    }
+
+    getCharacterById(id: string) {
+        return this._http.get(`${ApiUrl}/Character/Single/${id}`, { headers: this.getHeaders() });
+    }
+
+    createCharacter(character: CreateCharacter) {
+        return this._http.post(`${ApiUrl}/Character`, character, {headers: this.getHeaders() });
+    }
+
+    updateCharacter(character: CharacterDetail) {
+        return this._http.put(`${ApiUrl}Character`, character, {headers: this.getHeaders() });
+    }
+
+    deleteCharacter(id: number) {
+        return this._http.delete(`${ApiUrl}/Character/${id}`, { headers: this.getHeaders() });
     }
 
     private getHeaders() {
