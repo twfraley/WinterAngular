@@ -12,10 +12,12 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'nav', component: NavComponent },
   { path: 'contact', component: ContactComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  // { path: '', redirectTo: '/home', pathMatch: 'full' },
+  // { path: '**', redirectTo: '/home'},
   { path: 'user', component: UserComponent,
     children: [
-      { path: 'registration', component: RegistrationComponent }
+      { path: 'registration', component: RegistrationComponent },
+      { path: 'login', component: RegistrationComponent }
     ]
   }
 ];
