@@ -25,11 +25,11 @@ export class RegistrationComponent implements OnInit {
   }
 
   fieldIsNotProvided() {
-    return this._password.touched && this._password.errors.required;
+    return this._password.touched && this._password.hasError('required');
   }
 
   fieldIsTooShort() {
-    return this._password.touched && this._password.errors.minlength;
+    return this._password.touched && this._password.hasError('minlength(4)');
   }
 
   passwordsDoNotMatch() {
