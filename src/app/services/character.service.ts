@@ -11,7 +11,7 @@ export class CharacterService {
     constructor(private _http: HttpClient) { }
 
     getCharacters() {
-        return this._http.get(`${ApiUrl}/Characters`, { headers: this.getHeaders() });
+        return this._http.get(`${ApiUrl}/Character/All`, { headers: this.getHeaders() });
     }
 
     getCharacterById(id: string) {
@@ -23,7 +23,7 @@ export class CharacterService {
     }
 
     updateCharacter(character: CharacterDetail) {
-        return this._http.put(`${ApiUrl}Character`, character, {headers: this.getHeaders() });
+        return this._http.put(`${ApiUrl}/Character`, character, {headers: this.getHeaders() });
     }
 
     deleteCharacter(id: number) {
