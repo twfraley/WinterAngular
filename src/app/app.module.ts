@@ -3,6 +3,14 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
+import {
+  MatToolbarModule,
+  MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatTableModule,
+} from '@angular/material';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './components/user/user.component';
@@ -14,6 +22,8 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { CharacterComponent } from './components/character/character.component';
 import { TeamComponent } from './components/team/team.component';
+import { CharacterService } from './services/character.service';
+import { CharacterIndexComponent } from './components/character/character-index/character-index.component';
 
 @NgModule({
   declarations: [
@@ -25,15 +35,24 @@ import { TeamComponent } from './components/team/team.component';
     AboutComponent,
     ContactComponent,
     CharacterComponent,
-    TeamComponent
+    TeamComponent,
+    CharacterIndexComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTableModule,
   ],
-  providers: [UserService],
+  providers: [
+    UserService,
+    CharacterService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
