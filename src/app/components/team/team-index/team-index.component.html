@@ -1,5 +1,5 @@
-<h1>My Teams</h1>
-<a mat-raised-button color="primary" routerLink="/characters/create">Create New</a>
+<h1>Teams</h1>
+<a mat-raised-button color="primary" routerLink="/team/create">Create New</a>
 <hr>
 
 <div>
@@ -9,17 +9,17 @@
 
     <ng-container matColumnDef="details">
       <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
-      <mat-cell *matCellDef="let character" routerLink="/characters/detail/{{character.CharacterId}}"><i class="material-icons">account_circle</i></mat-cell>
+      <mat-cell *matCellDef="let character" routerLink="/characters/detail/{{team.teamId}}"><i class="material-icons">account_circle</i></mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="CharacterId">
-      <mat-header-cell *matHeaderCellDef> Character # </mat-header-cell>
-      <mat-cell *matCellDef="let character"> {{character.CharacterId}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef> Team # </mat-header-cell>
+      <mat-cell *matCellDef="let character"> {{team.teamId}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="CharacterName">
       <mat-header-cell *matHeaderCellDef> Character Name </mat-header-cell>
-      <mat-cell *matCellDef="let character"> {{character.CharacterName}} </mat-cell>
+      <mat-cell *matCellDef="let character"> {{team.TeamName}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="House">
