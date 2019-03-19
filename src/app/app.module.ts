@@ -28,6 +28,8 @@ import { CharacterIndexComponent } from './components/character/character-index/
 import { CharacterCreateComponent } from './components/character/character-create/character-create.component';
 import { CharacterDetailComponent } from './components/character/character-detail/character-detail.component';
 import { CharacterEditComponent } from './components/character/character-edit/character-edit.component';
+import { LoginComponent } from './components/user/login/login.component';
+import { LogoutComponent } from './components/user/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { CharacterEditComponent } from './components/character/character-edit/ch
     CharacterCreateComponent,
     CharacterDetailComponent,
     CharacterEditComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

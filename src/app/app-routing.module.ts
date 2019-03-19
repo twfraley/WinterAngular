@@ -9,18 +9,23 @@ import { NavComponent } from './components/nav/nav.component';
 import { CharacterIndexComponent } from './components/character/character-index/character-index.component';
 import { CharacterCreateComponent } from './components/character/character-create/character-create.component';
 import { CharacterDetailComponent } from './components/character/character-detail/character-detail.component';
+import { LoginComponent } from './components/user/login/login.component';
+import { LogoutComponent } from './components/user/logout/logout.component';
+import { TeamComponent } from './components/team/team.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'nav', component: NavComponent },
   { path: 'contact', component: ContactComponent },
-  // { path: '', redirectTo: '/home', pathMatch: 'full' },
-  // { path: '**', redirectTo: '/home'},
-  { path: 'user', component: UserComponent,
+  { path: 'team', component: TeamComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {
+    path: 'user', component: UserComponent,
     children: [
       { path: 'registration', component: RegistrationComponent },
-      { path: 'login', component: RegistrationComponent }
+      { path: 'login', component: LoginComponent },
+      { path: 'logout', component: LogoutComponent }
     ]
   },
   { path: 'characters', children: [
