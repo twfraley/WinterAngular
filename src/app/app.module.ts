@@ -11,6 +11,7 @@ import {
   MatTableModule,
 } from '@angular/material';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './components/user/user.component';
@@ -24,6 +25,9 @@ import { CharacterComponent } from './components/character/character.component';
 import { TeamComponent } from './components/team/team.component';
 import { CharacterService } from './services/character.service';
 import { CharacterIndexComponent } from './components/character/character-index/character-index.component';
+import { CharacterCreateComponent } from './components/character/character-create/character-create.component';
+import { CharacterDetailComponent } from './components/character/character-detail/character-detail.component';
+import { CharacterEditComponent } from './components/character/character-edit/character-edit.component';
 
 @NgModule({
   declarations: [
@@ -37,9 +41,13 @@ import { CharacterIndexComponent } from './components/character/character-index/
     CharacterComponent,
     TeamComponent,
     CharacterIndexComponent,
+    CharacterCreateComponent,
+    CharacterDetailComponent,
+    CharacterEditComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,

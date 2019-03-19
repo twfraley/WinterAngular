@@ -23,7 +23,7 @@ export class CharacterService {
     }
 
     updateCharacter(character: CharacterDetail) {
-        return this._http.put(`${ApiUrl}Character`, character, {headers: this.getHeaders() });
+        return this._http.put(`${ApiUrl}/Character`, character, {headers: this.getHeaders() });
     }
 
     deleteCharacter(id: number) {

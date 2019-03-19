@@ -7,6 +7,8 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { NavComponent } from './components/nav/nav.component';
 import { CharacterIndexComponent } from './components/character/character-index/character-index.component';
+import { CharacterCreateComponent } from './components/character/character-create/character-create.component';
+import { CharacterDetailComponent } from './components/character/character-detail/character-detail.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -21,7 +23,11 @@ const routes: Routes = [
       { path: 'login', component: RegistrationComponent }
     ]
   },
-  { path: 'characters', component: CharacterIndexComponent },
+  { path: 'characters', children: [
+    { path: '', component: CharacterIndexComponent },
+    { path: 'create', component: CharacterCreateComponent },
+    { path: 'detail/:id', component: CharacterDetailComponent }
+  ]},
 ];
 
 @NgModule({
