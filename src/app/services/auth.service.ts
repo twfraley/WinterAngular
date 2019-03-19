@@ -36,7 +36,7 @@ export class AuthService {
     this.isLoggedIn.next(false);
 
     this._http.post(`${Api_Url}/api/Account/Logout`, { headers: this.setHeader() });
-    this._router.navigate(['/login']);
+    this._router.navigate(['/user/login']);
   }
 
   currentUser(): Observable<Object> {

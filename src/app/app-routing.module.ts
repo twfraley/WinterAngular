@@ -7,6 +7,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { NavComponent } from './components/nav/nav.component';
 import { LoginComponent } from './components/user/login/login.component';
+import { LogoutComponent } from './components/user/logout/logout.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -18,7 +19,8 @@ const routes: Routes = [
     path: 'user', component: UserComponent,
     children: [
       { path: 'registration', component: RegistrationComponent },
-      { path: 'login', component: LoginComponent }
+      { path: 'login', component: LoginComponent },
+      { path: 'logout', component: LogoutComponent }
     ]
   }
 ];

@@ -15,6 +15,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { CharacterComponent } from './components/character/character.component';
 import { TeamComponent } from './components/team/team.component';
 import { LoginComponent } from './components/user/login/login.component';
+import { LogoutComponent } from './components/user/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { LoginComponent } from './components/user/login/login.component';
     ContactComponent,
     CharacterComponent,
     TeamComponent,
-    LoginComponent
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
