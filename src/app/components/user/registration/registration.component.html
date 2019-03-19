@@ -1,0 +1,40 @@
+<div class="row mt-4">
+    <div class="col-md-6 col-sm-12">
+      <div class="row" style="height: 450px;">
+        <div class="col-md-12 my-auto side-header">
+          <img src="/assets/img/add_user.png" class="mx-auto d-block">
+          <h1>User Registration</h1>
+          <p><em><strong>Winter Is Coming</strong></em></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <form [formGroup]="_registerForm" (submit)="onSubmit()">
+        <div class="form-group required">
+          <label>Email</label>
+          <input class="form-control" formControlName="email">
+          <label class="text-danger" *ngIf="fieldIsNotProvided()">Email is required.</label>
+        </div>
+        <div id="passwords">
+          <div class="form-group required">
+            <label>Password</label>
+            <input type="password" class="form-control" formControlName="password">
+            <label class="text-danger" *ngIf="fieldIsNotProvided()">This field is mandatory.</label>
+            <label class="text-danger" *ngIf="fieldIsTooShort()">Minimum 4 characters required.</label>
+          </div>
+          <div class="form-group required">
+            <label>Confirm Password</label>
+            <input type="password" class="form-control" formControlName="confirmPassword">
+            <label class="text-danger" *ngIf="fieldIsNotProvided()">This field is mandatory.</label>
+            <label class="text-danger" *ngIf="passwordsDoNotMatch()">Confirm Password does not match.</label>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-8 offset-md-2">
+            <button type="submit" class="btn btn-lg btn-block">Sign Up</button>
+            <a class="btn btn-lg btn-block" routerLink="/user/login">Log In</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>

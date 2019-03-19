@@ -1,0 +1,44 @@
+<h1>Character Index</h1>
+<a mat-raised-button color="primary" routerLink="/characters/create">Create New</a>
+<hr>
+
+<div>
+  <mat-table #table [dataSource]="dataSource">
+    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+    <ng-container matColumnDef="details">
+      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+      <mat-cell *matCellDef="let character" routerLink="/characters/detail/{{character.CharacterId}}"><i class="material-icons">account_circle</i></mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="CharacterId">
+      <mat-header-cell *matHeaderCellDef> Character # </mat-header-cell>
+      <mat-cell *matCellDef="let character"> {{character.CharacterId}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="CharacterName">
+      <mat-header-cell *matHeaderCellDef> Character Name </mat-header-cell>
+      <mat-cell *matCellDef="let character"> {{character.CharacterName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="House">
+      <mat-header-cell *matHeaderCellDef> House / Affiliation </mat-header-cell>
+      <mat-cell *matCellDef="let character"> {{character.House}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="ImageLink">
+      <mat-header-cell *matHeaderCellDef> Image Url </mat-header-cell>
+      <mat-cell *matCellDef="let character"> {{character.ImageLink}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="buttons">
+      <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+      <mat-cell *matCellDef="let character">
+        <i mat-icon class="material-icons">edit</i>
+        <i class="material-icons">delete</i>
+      </mat-cell>
+    </ng-container>
+
+  </mat-table>
+</div>
