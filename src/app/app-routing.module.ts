@@ -24,16 +24,14 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
-    path: 'user', component: UserComponent,
-    children: [
+    path: 'user', component: UserComponent, children: [
       { path: 'registration', component: RegistrationComponent },
       { path: 'login', component: LoginComponent },
       { path: 'logout', component: LogoutComponent }
     ]
   },
   {
-    path: 'team', component: TeamComponent, children: [
-      { path: 'index', component: TeamIndexComponent },
+    path: 'team', component: TeamIndexComponent, children: [
       { path: 'detail', component: TeamDetailComponent },
       { path: 'edit', component: TeamEditComponent },
       { path: 'create', component: TeamCreateComponent }

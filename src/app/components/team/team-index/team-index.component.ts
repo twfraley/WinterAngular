@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamIndexComponent implements OnInit {
 
+  columnNames = ['details', 'TeamId', 'TeamName', 'TotalPoints', 'Characters'];
+
   constructor() { }
 
   ngOnInit() {
