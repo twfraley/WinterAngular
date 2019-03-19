@@ -8,12 +8,14 @@ import { ContactComponent } from './components/contact/contact.component';
 import { NavComponent } from './components/nav/nav.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { LogoutComponent } from './components/user/logout/logout.component';
+import { TeamComponent } from './components/team/team.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'nav', component: NavComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'team', component: TeamComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'user', component: UserComponent,
