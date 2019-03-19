@@ -30,6 +30,7 @@ import { CharacterDetailComponent } from './components/character/character-detai
 import { CharacterEditComponent } from './components/character/character-edit/character-edit.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { LogoutComponent } from './components/user/logout/logout.component';
+import { CharacterDeleteComponent } from './components/character/character-delete/character-delete.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { LogoutComponent } from './components/user/logout/logout.component';
     CharacterDetailComponent,
     CharacterEditComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    CharacterDeleteComponent
   ],
   imports: [
     BrowserModule,

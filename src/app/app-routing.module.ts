@@ -9,6 +9,8 @@ import { NavComponent } from './components/nav/nav.component';
 import { CharacterIndexComponent } from './components/character/character-index/character-index.component';
 import { CharacterCreateComponent } from './components/character/character-create/character-create.component';
 import { CharacterDetailComponent } from './components/character/character-detail/character-detail.component';
+import { CharacterEditComponent } from './components/character/character-edit/character-edit.component';
+import { CharacterDeleteComponent } from './components/character/character-delete/character-delete.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { LogoutComponent } from './components/user/logout/logout.component';
 import { TeamComponent } from './components/team/team.component';
@@ -31,7 +33,9 @@ const routes: Routes = [
   { path: 'characters', children: [
     { path: '', component: CharacterIndexComponent },
     { path: 'create', component: CharacterCreateComponent },
-    { path: 'detail/:id', component: CharacterDetailComponent }
+    { path: 'detail/:id', component: CharacterDetailComponent },
+    { path: 'edit/:id', component: CharacterEditComponent },
+    { path: 'delete/:id', component: CharacterDeleteComponent }
   ]},
 ];
 
