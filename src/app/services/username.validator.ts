@@ -1,5 +1,6 @@
 import {FormControl} from '@angular/forms';
 
+// Still needs tons of work.  Not implemented yet.
 export class UsernameValidator {
     public validUsername(fc: FormControl){
         if (UsernameValidator.usernameExists(fc)){
