@@ -1,0 +1,42 @@
+<h1>Create Point Values.</h1>
+<hr>
+<div class="container">
+<img src="https://imagesvc.timeincapp.com/v3/fan/image?url=https%3A%2F%2Fwinteriscoming.net%2Ffiles%2F2018%2F05%2FGOT125-32x18-MAIN-SITE.jpg&c=sc&w=736&h=485" class="center">
+</div>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="pointValueForm">
+  <div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="CharacterId" formControlName="CharacterId" type="CharacterId" required/>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="SurvivedEpisode" formControlName="SurvivedEpisode" type="SurvivedEpisode" required/>
+      </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+          <input matInput placeholder="EpisodeAppearance" formControlName="EpisodeAppearance" type="EpisodeAppearance" required/>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="GetKill" formControlName="GetKill" type="GetKill" required/>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Death" formControlName="Death" type="Death" required/>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="BigKill" formControlName="BigKill" type="BigKill" required/>
+        </mat-form-field>
+      </div>
+  </div>
+  <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Point Value</button>
+  <br>
+  <a mat-button routerLink="/pointvalues">Back to List</a>
+</form>

@@ -2,27 +2,28 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { PointValueCreate } from '../models/PointValueCreate';
 import { PointValueEdit } from '../models/PointValueEdit';
+import { PointValue } from '../models/PointValue';
 
 const ApiUrl = 'https://westerosfantasyleague.azurewebsites.net/api';
 
 @Injectable()
 
-export class CharacterService {
+export class PointValueService {
     constructor(private _http: HttpClient) { }
 
     getPointValues() {
         return this._http.get(`${ApiUrl}/PointValues/All`, { headers: this.getHeaders() });
     }
 
-    getPointValueById(id: string, pointValueId: number) {
-        return this._http.get(`${ApiUrl}/PointValues/Single/${id}?pointValueId=${pointValueId}`, { headers: this.getHeaders() });
+    getPointValueById(id: string) {
+        return this._http.get(`${ApiUrl}/PointValues/Single/${id}`, { headers: this.getHeaders() });
     }
 
     createPointValue(pointValue: PointValueCreate) {
         return this._http.post(`${ApiUrl}/Values`, pointValue, {headers: this.getHeaders() });
     }
 
-    updatePointValues(pointValue: PointValueEdit) {
+    updatePointValues(pointValue: PointValue) {
         return this._http.put(`${ApiUrl}Values`, pointValue, {headers: this.getHeaders() });
     }
 

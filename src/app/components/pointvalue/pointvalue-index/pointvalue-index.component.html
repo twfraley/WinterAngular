@@ -1,0 +1,60 @@
+<h1>PointValue Index</h1>
+<a mat-raised-button class="createButton" color="primary" routerLink="/pointvalues/create">Create New</a>
+<hr>
+
+<div>
+  <mat-table #table [dataSource]="dataSource">
+    <mat-header-row *matHeaderRowDef="pointValueColumnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: pointValueColumnNames;"></mat-row>
+
+    <!-- <ng-container matColumnDef="CharacterId">
+      <mat-header-cell *matHeaderCellDef> Character ID# </mat-header-cell>
+      <mat-cell *matCellDef="let character"> {{character.CharacterId}} </mat-cell>
+    </ng-container> -->
+
+    <ng-container matColumnDef="CharacterId">
+      <mat-header-cell *matHeaderCellDef> CharacterID# </mat-header-cell>
+      <mat-cell *matCellDef="let pointValue"> {{pointValue.CharacterId}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="SurvivedEpisode">
+      <mat-header-cell *matHeaderCellDef> Survived Episode </mat-header-cell>
+      <mat-cell *matCellDef="let pointValue"> {{pointValue.SurvivedEpisode}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="EpisodeAppearance">
+      <mat-header-cell *matHeaderCellDef> EpisodeAppearance </mat-header-cell>
+      <mat-cell *matCellDef="let pointValue"> {{pointValue.EpisodeAppearance}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="GetKill">
+      <mat-header-cell *matHeaderCellDef> Got a Kill </mat-header-cell>
+      <mat-cell *matCellDef="let pointValue"> {{pointValue.GetKill}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Death">
+      <mat-header-cell *matHeaderCellDef> Dead </mat-header-cell>
+      <mat-cell *matCellDef="let pointValue"> {{pointValue.Death}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="BigKill">
+      <mat-header-cell *matHeaderCellDef> Big Kill </mat-header-cell>
+      <mat-cell *matCellDef="let pointValue"> {{pointValue.BigKill}} </mat-cell>
+    </ng-container>
+
+    <!-- <ng-container matColumnDef="ImageLink">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let character"><img [src]="character.ImageLink" style="width:40%; height: 40%; border-radius: 50%;" routerLink="/characters/detail/{{character.CharacterId}}"> </mat-cell>
+    </ng-container> -->
+
+    <ng-container matColumnDef="buttons">
+      <mat-header-cell *matHeaderCellDef> Edit / Delete / Details </mat-header-cell>
+      <mat-cell *matCellDef="let pointValue">
+        <i mat-icon class="material-icons" routerLink="/pointvalues/edit/{{pointValue.PointValueId}}">edit</i>
+        <i class="material-icons" routerLink="/pointvalues/delete/{{pointValue.PointValueId}}">delete</i>
+        <i class="material-icons" routerLink="/pointvalues/detail/{{pointValue.PointValueId}}">account_circle</i>
+      </mat-cell>
+    </ng-container>
+
+  </mat-table>
+</div>

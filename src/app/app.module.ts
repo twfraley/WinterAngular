@@ -36,6 +36,12 @@ import { TeamIndexComponent } from './components/team/team-index/team-index.comp
 import { TeamCreateComponent } from './components/team/team-create/team-create.component';
 import { TeamEditComponent } from './components/team/team-edit/team-edit.component';
 import { TeamDetailComponent } from './components/team/team-detail/team-detail.component';
+import { PointValueService } from './services/pointValue.service';
+import { PointValueComponent } from './components/pointvalue/pointvalue.component';
+import { PointValueIndexComponent } from './components/pointvalue/pointvalue-index/pointvalue-index.component';
+import { PointValueCreateComponent } from './components/pointvalue/pointvalue-create/pointvalue-create.component';
+import { PointValueDetailComponent } from './components/pointvalue/pointvalue-detail/pointvalue-detail.component';
+import { PointValueEditComponent } from './components/pointvalue/pointvalue-edit/pointvalue-edit.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +64,12 @@ import { TeamDetailComponent } from './components/team/team-detail/team-detail.c
     TeamIndexComponent,
     TeamCreateComponent,
     TeamEditComponent,
-    TeamDetailComponent
+    TeamDetailComponent,
+    PointValueComponent,
+    PointValueIndexComponent,
+    PointValueCreateComponent,
+    PointValueDetailComponent,
+    PointValueEditComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +86,8 @@ import { TeamDetailComponent } from './components/team/team-detail/team-detail.c
   providers: [
     UserService,
     CharacterService,
-    TeamService
+    TeamService,
+    PointValueService,
   ],
   bootstrap: [AppComponent]
 })
