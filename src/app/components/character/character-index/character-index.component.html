@@ -4,8 +4,8 @@
 
 <div>
   <mat-table #table [dataSource]="dataSource">
-    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+    <mat-header-row *matHeaderRowDef="characterColumnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: characterColumnNames;"></mat-row>
 
     <!-- <ng-container matColumnDef="CharacterId">
       <mat-header-cell *matHeaderCellDef> Character ID# </mat-header-cell>
