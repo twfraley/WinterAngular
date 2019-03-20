@@ -9,32 +9,32 @@
 
     <ng-container matColumnDef="details">
       <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
-      <mat-cell *matCellDef="let character" routerLink="/characters/detail/{{team.teamId}}"><i class="material-icons">account_circle</i></mat-cell>
+      <mat-cell *matCellDef="let teamDetail" routerLink="/team"><i class="material-icons">account_circle</i></mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="CharacterId">
+    <ng-container matColumnDef="TeamId">
       <mat-header-cell *matHeaderCellDef> Team # </mat-header-cell>
-      <mat-cell *matCellDef="let character"> {{team.teamId}} </mat-cell>
+      <mat-cell *matCellDef="let teamDetail"> {{teamDetail.TeamId}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="CharacterName">
-      <mat-header-cell *matHeaderCellDef> Character Name </mat-header-cell>
-      <mat-cell *matCellDef="let character"> {{team.TeamName}} </mat-cell>
+    <ng-container matColumnDef="TeamName">
+      <mat-header-cell *matHeaderCellDef> Team Name </mat-header-cell>
+      <mat-cell *matCellDef="let teamDetail"> {{teamDetail.TeamName}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="House">
-      <mat-header-cell *matHeaderCellDef> House / Affiliation </mat-header-cell>
-      <mat-cell *matCellDef="let character"> {{character.House}} </mat-cell>
+    <ng-container matColumnDef="TotalPoints">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Total Points </mat-header-cell>
+      <mat-cell *matCellDef="let teamDetail"> {{teamDetail.TotalPoints}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="ImageLink">
-      <mat-header-cell *matHeaderCellDef> Image Url </mat-header-cell>
-      <mat-cell *matCellDef="let character"> {{character.ImageLink}} </mat-cell>
+    <ng-container matColumnDef="Characters">
+      <mat-header-cell *matHeaderCellDef> Characters: </mat-header-cell>
+      <mat-cell *matCellDef="let  teamDetail">{{teamDetail.Characters}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="buttons">
       <mat-header-cell *matHeaderCellDef> </mat-header-cell>
-      <mat-cell *matCellDef="let character">
+      <mat-cell *matCellDef="let teamDetail">
         <i mat-icon class="material-icons">edit</i>
         <i class="material-icons">delete</i>
       </mat-cell>

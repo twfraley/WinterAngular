@@ -19,7 +19,9 @@ export class TeamIndexComponent implements OnInit {
   ngOnInit() {
     this._teamService.getTeams().subscribe((teams: TeamDetail[]) => {
       this.dataSource = new MatTableDataSource<TeamDetail>(teams);
-    })
+    });
+
+    console.log(this.dataSource);
   }
 
 }
