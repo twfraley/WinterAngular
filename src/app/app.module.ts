@@ -23,6 +23,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { CharacterComponent } from './components/character/character.component';
 import { TeamComponent } from './components/team/team.component';
+import { TeamService } from 'src/app/services/team.service';
 import { CharacterService } from './services/character.service';
 import { CharacterIndexComponent } from './components/character/character-index/character-index.component';
 import { CharacterCreateComponent } from './components/character/character-create/character-create.component';
@@ -30,6 +31,10 @@ import { CharacterDetailComponent } from './components/character/character-detai
 import { CharacterEditComponent } from './components/character/character-edit/character-edit.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { LogoutComponent } from './components/user/logout/logout.component';
+import { TeamIndexComponent } from './components/team/team-index/team-index.component';
+import { TeamCreateComponent } from './components/team/team-create/team-create.component';
+import { TeamEditComponent } from './components/team/team-edit/team-edit.component';
+import { TeamDetailComponent } from './components/team/team-detail/team-detail.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +52,11 @@ import { LogoutComponent } from './components/user/logout/logout.component';
     CharacterDetailComponent,
     CharacterEditComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    TeamIndexComponent,
+    TeamCreateComponent,
+    TeamEditComponent,
+    TeamDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -64,6 +73,7 @@ import { LogoutComponent } from './components/user/logout/logout.component';
   providers: [
     UserService,
     CharacterService,
+    TeamService
   ],
   bootstrap: [AppComponent]
 })
