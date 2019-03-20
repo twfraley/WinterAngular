@@ -1,25 +1,16 @@
+
+<html>
 <h1>Delete</h1>
-<h4>Are you sure you want to delete this?</h4>
+<h5>Are you sure you want to delete this?</h5>
 
-<hr>
 <div *ngIf="character">
-    <div>
-        <label for="">ImageLink:</label>
-        <span><img [src]="character.ImageLink" alt="character.CharacterName"></span>
-      </div>
-  <div>
-    <label for="">CharacterId:</label>
-    <span>{{character.CharacterId}}</span>
-  </div>
-  <div>
-      <label for="">CharacterName:</label>
-      <span>{{character.CharacterName}}</span>
+    <div class=container>
+        <h2>{{character.CharacterName}}</h2>      
+        <img [src]="character.ImageLink" alt="character.CharacterName">
+        <h4>CharacterId: {{character.CharacterId}}</h4>
+      <h4>{{character.House}}</h4>
+      <button mat-button color="warn" (click)="onDelete()">Delete</button>
+      <button mat-button color="primary" routerLink="/characters">Back To List</button>
     </div>
-    <div>
-        <label for="">House:</label>
-        <span>{{character.House}}</span>
-      </div>
 </div>
-
-<button mat-button color="warn" (click)="onDelete()">Delete</button>
-<button mat-button color="primary" routerLink="/characters">Back To List</button>
+</html>
