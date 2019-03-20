@@ -54,7 +54,7 @@ import { TeamDetailComponent } from './components/team/team-detail/team-detail.c
     CharacterEditComponent,
     LoginComponent,
     LogoutComponent,
-    CharacterDeleteComponent
+    CharacterDeleteComponent,
     TeamIndexComponent,
     TeamCreateComponent,
     TeamEditComponent,
