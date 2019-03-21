@@ -4,8 +4,14 @@
     margin: 4px;
     border: 2px solid white;
     border-radius: 50%;
-    box-shadow: 0px -2px 3px black;
+    box-shadow: 0px 2px 3px black;
 }
 .thumbnailImages:hover {
     box-shadow: none;
+}
+
+.teamTableRow {
+    background: linear-gradient(
+        to bottom, white,white,white,whitesmoke
+    ); 
 }

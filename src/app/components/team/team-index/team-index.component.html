@@ -3,13 +3,14 @@
 <hr>
 
 <div>
-  <mat-table #table [dataSource]="dataSource">
-    <mat-header-row *matHeaderRowDef="teamColumnNames"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: teamColumnNames;"></mat-row>
+  <mat-table #table [dataSource]="dataSource" matSort matSortDisableClear>
+
+    <mat-header-row *matHeaderRowDef="teamColumnNames" class="teamTableRow"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: teamColumnNames;" class="teamTableRow" (click)="onRowClicked(row)"></mat-row>
 
     <ng-container matColumnDef="details">
       <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
-      <mat-cell *matCellDef="let teamDetail" routerLink="/team"><i class="material-icons">account_circle</i></mat-cell>
+      <mat-cell *matCellDef="let teamDetail" routerLink="/team/{{teamDetail.TeamId}}"><i class="material-icons">account_circle</i></mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="TeamName">
