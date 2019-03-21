@@ -15,33 +15,32 @@
                   <input matInput placeholder="CharacterId" formControlName="CharacterId" type="CharacterId" required [value]="pointValue.CharacterId"/>
               </mat-form-field>
           </div>
-            <div>
-                <mat-form-field>
-                    <input matInput placeholder="SurvivedEpisode" formControlName="SurvivedEpisode" type="SurvivedEpisode" required [value]="pointValue.SurvivedEpisode"/>
-                </mat-form-field>
-            </div>
-            <div>
-              <mat-form-field>
-                  <input matInput placeholder="EpisodeAppearance" formControlName="EpisodeAppearance" type="EpisodeAppearance" required [value]="pointValue.EpisodeAppearance"/>
-              </mat-form-field>
-          </div>
-          <div>
-            <mat-form-field>
-                <input matInput placeholder="GetKill" formControlName="GetKill" type="GetKill" required [value]="pointValue.GetKill"/>
-            </mat-form-field>
-        </div>
-        <div>
-          <mat-form-field>
-              <input matInput placeholder="Death" formControlName="Death" type="Death" required [value]="pointValue.Death"/>
-          </mat-form-field>
+    <div>
+        <p>SurvivedEpisode</p><mat-checkbox [indeterminate]="true" formControlName="SurvivedEpisode">Previous Answer:
+          <input matInput placeholder="SurvivedEpisode" formControlName="SurvivedEpisode" type="SurvivedEpisode" />
+        </mat-checkbox>
       </div>
       <div>
-        <mat-form-field>
-            <input matInput placeholder="BigKill" formControlName="BigKill" type="BigKill" required [value]="pointValue.BigKill"/>
-        </mat-form-field>
-    </div>
+          <p>Episode Appearance</p><mat-checkbox [indeterminate]="true" formControlName="EpisodeAppearance">Previous Answer: <input matInput placeholder="EpisodeAppearance" formControlName="EpisodeAppearance" type="EpisodeAppearance" />
+          </mat-checkbox>
         </div>
-        <button mat-raised-button class="nav-btn" color="primary" type="sumbit">Save</button>
+        <div>
+          <p>GetKill</p><mat-checkbox [indeterminate]="true" formControlName="GetKill">Previous Answer:
+            <input matInput placeholder="GetKill" formControlName="GetKill" type="GetKill" />
+          </mat-checkbox>
+        </div>
+        <div>
+          <p>Death</p><mat-checkbox [indeterminate]="true" formControlName="Death">Previous Answer:
+            <input matInput placeholder="Death" formControlName="Death" type="Death" />
+          </mat-checkbox>
+        </div>
+        <div>
+          <p>Big Kill</p><mat-checkbox [indeterminate]="true" formControlName="BigKill">Previous Answer:
+            <input matInput placeholder="BigKill" formControlName="BigKill" type="BigKill" />
+          </mat-checkbox>
+        </div>
+        </div>
+        <button mat-raised-button class="nav-btn" color="primary" type="submit">Save</button>
         <br>
         <a mat-button routerLink="/pointvalues">Back To List</a>
     </form>

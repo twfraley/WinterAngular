@@ -22,6 +22,7 @@ import { PointValueIndexComponent } from './components/pointvalue/pointvalue-ind
 import { PointValueCreateComponent } from './components/pointvalue/pointvalue-create/pointvalue-create.component';
 import { PointValueDetailComponent } from './components/pointvalue/pointvalue-detail/pointvalue-detail.component';
 import { PointValueEditComponent } from './components/pointvalue/pointvalue-edit/pointvalue-edit.component';
+import { PointValueDeleteComponent } from './components/pointvalue/pointvalue-delete/pointvalue-delete.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -55,7 +56,8 @@ const routes: Routes = [
       { path: '', component: PointValueIndexComponent },
       { path: 'detail/:id', component: PointValueDetailComponent },
       { path: 'edit/:id', component: PointValueEditComponent },
-      { path: 'create', component: PointValueCreateComponent }
+      { path: 'create', component: PointValueCreateComponent },
+      { path: 'delete/:id', component: PointValueDeleteComponent }
     ]
   },
 ];

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 
 import {
@@ -9,6 +10,7 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatTableModule,
+  MatCheckboxModule,
 } from '@angular/material';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -42,6 +44,7 @@ import { PointValueIndexComponent } from './components/pointvalue/pointvalue-ind
 import { PointValueCreateComponent } from './components/pointvalue/pointvalue-create/pointvalue-create.component';
 import { PointValueDetailComponent } from './components/pointvalue/pointvalue-detail/pointvalue-detail.component';
 import { PointValueEditComponent } from './components/pointvalue/pointvalue-edit/pointvalue-edit.component';
+import { PointValueDeleteComponent } from './components/pointvalue/pointvalue-delete/pointvalue-delete.component';
 
 @NgModule({
   declarations: [
@@ -69,19 +72,22 @@ import { PointValueEditComponent } from './components/pointvalue/pointvalue-edit
     PointValueIndexComponent,
     PointValueCreateComponent,
     PointValueDetailComponent,
-    PointValueEditComponent
+    PointValueEditComponent,
+    PointValueDeleteComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     HttpClientModule,
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
+    MatCheckboxModule,
   ],
   providers: [
     UserService,

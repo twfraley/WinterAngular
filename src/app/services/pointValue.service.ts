@@ -24,7 +24,7 @@ export class PointValueService {
     }
 
     updatePointValues(pointValue: PointValue) {
-        return this._http.put(`${ApiUrl}Values`, pointValue, {headers: this.getHeaders() });
+        return this._http.put(`${ApiUrl}/Values`, pointValue, {headers: this.getHeaders() });
     }
 
     deletePointValue(id: number) {

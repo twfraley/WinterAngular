@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-point-value-create',
+  selector: 'app-pointvalue-create',
   templateUrl: './pointvalue-create.component.html',
   styleUrls: ['./pointvalue-create.component.css']
 })
