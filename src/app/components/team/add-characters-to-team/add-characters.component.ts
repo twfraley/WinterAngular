@@ -3,7 +3,7 @@ import { Character } from 'src/app/models/Character';
 import { TeamCharacterCreate } from 'src/app/models/TeamCharacterCreate';
 import { TeamCharacterService } from 'src/app/services/teamCharacter.service';
 import { TeamDetail } from 'src/app/models/TeamDetail';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TeamService } from 'src/app/services/team.service';
 import { CharacterService } from 'src/app/services/character.service';
 
@@ -15,7 +15,7 @@ import { CharacterService } from 'src/app/services/character.service';
 
 export class AddCharactersToTeamComponent implements OnInit {
 
-  constructor(private _activatedRoute: ActivatedRoute, private _teamCharacterService: TeamCharacterService, private _teamService: TeamService, private _characterService: CharacterService) { }
+  constructor(private _activatedRoute: ActivatedRoute, private _router: Router, private _teamCharacterService: TeamCharacterService, private _teamService: TeamService, private _characterService: CharacterService) { }
 
   team: TeamDetail;
   characters: Character[];
@@ -41,7 +41,8 @@ export class AddCharactersToTeamComponent implements OnInit {
       TeamId: this.team.TeamId
     }
 
-    this._teamCharacterService.createTeamCharacter(teamCharacter);
+    // ROUTING IS BROKEN STILL - DON'T MOVE ON
+    this._teamCharacterService.createTeamCharacter(teamCharacter).subscribe( data => this._router.navigate([`/manageTeam/${this.team.TeamId}`], {relativeTo: this._activatedRoute}));
     console.log(teamCharacter);
   }
 }
