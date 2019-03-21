@@ -24,6 +24,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { TeamService } from 'src/app/services/team.service';
 import { CharacterService } from './services/character.service';
+import { TeamCharacterService} from './services/teamCharacter.service';
 import { CharacterIndexComponent } from './components/character/character-index/character-index.component';
 import { CharacterCreateComponent } from './components/character/character-create/character-create.component';
 import { CharacterDetailComponent } from './components/character/character-detail/character-detail.component';
@@ -75,7 +76,8 @@ import { AddCharactersToTeamComponent } from './components/team/add-characters-t
   providers: [
     UserService,
     CharacterService,
-    TeamService
+    TeamService,
+    TeamCharacterService,
   ],
   bootstrap: [AppComponent]
 })

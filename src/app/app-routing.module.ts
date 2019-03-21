@@ -46,7 +46,8 @@ const routes: Routes = [
       { path: 'detail/:id', component: TeamDetailComponent },
       { path: 'addCharacter/:id', component: AddCharactersToTeamComponent},
       { path: 'edit/:id', component: TeamEditComponent },
-      { path: 'create', component: TeamCreateComponent }
+      { path: 'create', component: TeamCreateComponent },
+      { path: 'manageTeam/:id', component: AddCharactersToTeamComponent},
     ]
   },
 ];
