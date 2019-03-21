@@ -35,6 +35,7 @@ import { TeamIndexComponent } from './components/team/team-index/team-index.comp
 import { TeamCreateComponent } from './components/team/team-create/team-create.component';
 import { TeamEditComponent } from './components/team/team-edit/team-edit.component';
 import { TeamDetailComponent } from './components/team/team-detail/team-detail.component';
+import { AddCharactersToTeamComponent } from './components/team/add-characters-to-team/add-characters.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { TeamDetailComponent } from './components/team/team-detail/team-detail.c
     TeamIndexComponent,
     TeamCreateComponent,
     TeamEditComponent,
-    TeamDetailComponent
+    TeamDetailComponent,
+    AddCharactersToTeamComponent
   ],
   imports: [
     BrowserModule,

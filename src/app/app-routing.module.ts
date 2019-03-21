@@ -17,6 +17,7 @@ import { TeamIndexComponent } from './components/team/team-index/team-index.comp
 import { TeamDetailComponent } from './components/team/team-detail/team-detail.component';
 import { TeamEditComponent } from './components/team/team-edit/team-edit.component';
 import { TeamCreateComponent } from './components/team/team-create/team-create.component';
+import { AddCharactersToTeamComponent } from './components/team/add-characters-to-team/add-characters.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -42,8 +43,9 @@ const routes: Routes = [
   {
     path: 'team', children: [
       { path: '', component: TeamIndexComponent },
-      { path: 'detail', component: TeamDetailComponent },
-      { path: 'edit', component: TeamEditComponent },
+      { path: 'detail/:id', component: TeamDetailComponent },
+      { path: 'addCharacter/:id', component: AddCharactersToTeamComponent},
+      { path: 'edit/:id', component: TeamEditComponent },
       { path: 'create', component: TeamCreateComponent }
     ]
   },
