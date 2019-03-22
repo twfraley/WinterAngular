@@ -7,11 +7,6 @@
     <mat-header-row *matHeaderRowDef="characterColumnNames"></mat-header-row>
     <mat-row *matRowDef="let row; columns: characterColumnNames;"></mat-row>
 
-    <!-- <ng-container matColumnDef="CharacterId">
-      <mat-header-cell *matHeaderCellDef> Character ID# </mat-header-cell>
-      <mat-cell *matCellDef="let character"> {{character.CharacterId}} </mat-cell>
-    </ng-container> -->
-
     <ng-container matColumnDef="CharacterName">
       <mat-header-cell *matHeaderCellDef> Character Name </mat-header-cell>
       <mat-cell *matCellDef="let character"> {{character.CharacterName}} </mat-cell>

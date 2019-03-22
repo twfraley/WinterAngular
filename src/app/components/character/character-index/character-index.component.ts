@@ -14,7 +14,7 @@ export class CharacterIndexComponent implements OnInit {
 
   constructor(private _characterService: CharacterService) { }
 
-  dataSource: MatTableDataSource<Character>
+  dataSource: MatTableDataSource<Character>;
 
   ngOnInit() {
     this._characterService.getCharacters().subscribe((characters: Character[]) => {

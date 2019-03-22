@@ -3,18 +3,14 @@
 <hr>
 
 <div>
-  <mat-table #table [dataSource]="dataSource">
-    <mat-header-row *matHeaderRowDef="teamColumnNames"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: teamColumnNames;"></mat-row>
+  <mat-table #table [dataSource]="dataSource" matSort matSortDisableClear>
+
+    <mat-header-row *matHeaderRowDef="teamColumnNames" class="teamTableRow"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: teamColumnNames;" class="teamTableRow" ></mat-row>
 
     <ng-container matColumnDef="details">
       <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
-      <mat-cell *matCellDef="let teamDetail" routerLink="/team"><i class="material-icons">account_circle</i></mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="TeamId">
-      <mat-header-cell *matHeaderCellDef> Team # </mat-header-cell>
-      <mat-cell *matCellDef="let teamDetail"> {{teamDetail.TeamId}} </mat-cell>
+      <mat-cell *matCellDef="let teamDetail" routerLink="/team/detail/{{teamDetail.TeamId}}"><i class="material-icons">account_circle</i></mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="TeamName">
@@ -29,7 +25,9 @@
 
     <ng-container matColumnDef="Characters">
       <mat-header-cell *matHeaderCellDef> Characters: </mat-header-cell>
-      <mat-cell *matCellDef="let  teamDetail">{{teamDetail.Characters}}</mat-cell>
+      <mat-cell *matCellDef="let  teamDetail">
+        <img *ngFor="let character of teamDetail.Characters" src="{{ character.ImageLink }}" class="thumbnailImages" routerLink="/characters/detail/{{ character.CharacterId }}">
+      </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="buttons">

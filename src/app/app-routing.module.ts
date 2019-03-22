@@ -13,11 +13,11 @@ import { CharacterEditComponent } from './components/character/character-edit/ch
 import { CharacterDeleteComponent } from './components/character/character-delete/character-delete.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { LogoutComponent } from './components/user/logout/logout.component';
-import { TeamComponent } from './components/team/team.component';
 import { TeamIndexComponent } from './components/team/team-index/team-index.component';
 import { TeamDetailComponent } from './components/team/team-detail/team-detail.component';
 import { TeamEditComponent } from './components/team/team-edit/team-edit.component';
 import { TeamCreateComponent } from './components/team/team-create/team-create.component';
+import { AddCharactersToTeamComponent } from './components/team/add-characters-to-team/add-characters.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -26,7 +26,8 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
-    path: 'user', component: UserComponent, children: [
+    path: 'user', children: [
+      { path: '', component: UserComponent },
       { path: 'registration', component: RegistrationComponent },
       { path: 'login', component: LoginComponent },
       { path: 'logout', component: LogoutComponent }
@@ -40,10 +41,13 @@ const routes: Routes = [
     { path: 'delete/:id', component: CharacterDeleteComponent }
   ]},
   {
-    path: 'team', component: TeamIndexComponent, children: [
-      { path: 'detail', component: TeamDetailComponent },
-      { path: 'edit', component: TeamEditComponent },
-      { path: 'create', component: TeamCreateComponent }
+    path: 'team', children: [
+      { path: '', component: TeamIndexComponent },
+      { path: 'detail/:id', component: TeamDetailComponent },
+      { path: 'addCharacter/:id', component: AddCharactersToTeamComponent},
+      { path: 'edit/:id', component: TeamEditComponent },
+      { path: 'create', component: TeamCreateComponent },
+      { path: 'manageTeam/:id', component: AddCharactersToTeamComponent},
     ]
   },
 ];
