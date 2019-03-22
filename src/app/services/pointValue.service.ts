@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { PointValueCreate } from '../models/PointValueCreate';
-import { PointValueEdit } from '../models/PointValueEdit';
 import { PointValue } from '../models/PointValue';
 
 const ApiUrl = 'https://westerosfantasyleague.azurewebsites.net/api';
