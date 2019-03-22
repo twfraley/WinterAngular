@@ -5,10 +5,6 @@ import { Router } from '@angular/router';
 import { Character } from 'src/app/models/Character';
 import { CharacterService } from 'src/app/services/character.service';
 
-export interface Characters {
-  id: number;
-  name: string;
-}
 
 @Component({
   selector: 'app-pointvalue-create',
