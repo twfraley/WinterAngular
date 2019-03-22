@@ -10,8 +10,8 @@
       <mat-label>Character</mat-label>
       <mat-select formControlName="CharacterId" type="CharacterId" required>
         <mat-option>--</mat-option>
-        <mat-option *ngFor="let characters of characters" [value]="characters.id">
-          {{characters.name}}
+        <mat-option *ngFor="let character of characterSelect" [value]="character.CharacterId">
+          {{character.CharacterName}}
         </mat-option>
       </mat-select>
     </mat-form-field>

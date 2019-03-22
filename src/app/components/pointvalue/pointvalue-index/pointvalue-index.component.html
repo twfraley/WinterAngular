@@ -43,8 +43,8 @@
     </ng-container> -->
 
     <ng-container matColumnDef="CharacterId">
-      <mat-header-cell *matHeaderCellDef> CharacterID# </mat-header-cell>
-      <mat-cell *matCellDef="let pointValue"><img *ngFor="let character of pointValue.Characters" [src]="character.ImageLink" /> </mat-cell>
+      <mat-header-cell *matHeaderCellDef> Character </mat-header-cell>
+      <mat-cell *matCellDef="let pointValue"> <div *ngFor="let character of characters"> <img *ngIf="pointValue.CharacterId === character.CharacterId" [src]="character.ImageLink" style="width:40%; height: 40%; border-radius: 50%;" routerLink="/characters/detail/{{character.CharacterId}}"></div> </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="SurvivedEpisode">
@@ -59,7 +59,7 @@
 
       <ng-container matColumnDef="GetKill">
           <mat-header-cell *matHeaderCellDef> Got a Kill </mat-header-cell>
-          <mat-cell *matCellDef="let pointValue"><i class="material-icons" *ngIf="pointValue.GetKill === true">add_circle</i><i class="material-icons" *ngIf="pointValue.GetKill === false">remove_circle</i></mat-cell>
+          <mat-cell *matCellDef="let pointValue"><i class="material-icons" *ngIf="pointValue.GetKill === true">add_circle</i><i class="material-icons" *ngIf="pointValue.GetKill === false">panorama_fish_eye</i></mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="Death">

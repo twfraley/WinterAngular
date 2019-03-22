@@ -29,6 +29,7 @@ export class PointValueEditComponent implements OnInit {
   }
 
   ngOnInit() {
+    
   }
 
 
@@ -54,7 +55,7 @@ export class PointValueEditComponent implements OnInit {
       Death: form.value.Death,
       BigKill: form.value.BigKill
     };
-    console.log(updatePointValue);
+    
     this._pointValueService.updatePointValues(updatePointValue).subscribe(d => {
       this._router.navigate(['/pointvalues']);
     });

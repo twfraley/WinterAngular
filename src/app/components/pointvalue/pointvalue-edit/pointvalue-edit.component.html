@@ -16,26 +16,26 @@
               </mat-form-field>
           </div>
     <div>
-        <p>SurvivedEpisode</p><mat-checkbox [indeterminate]="true" formControlName="SurvivedEpisode">Previous Answer:
+        <p>SurvivedEpisode</p><mat-checkbox [value]="pointValue.SurvivedEpisode" formControlName="SurvivedEpisode">Previous Answer:
           <input matInput placeholder="SurvivedEpisode" formControlName="SurvivedEpisode" type="SurvivedEpisode" />
         </mat-checkbox>
       </div>
       <div>
-          <p>Episode Appearance</p><mat-checkbox [indeterminate]="true" formControlName="EpisodeAppearance">Previous Answer: <input matInput placeholder="EpisodeAppearance" formControlName="EpisodeAppearance" type="EpisodeAppearance" />
+          <p>Episode Appearance</p><mat-checkbox [value]="pointValue.EpisodeAppearance" formControlName="EpisodeAppearance">Previous Answer: <input matInput placeholder="EpisodeAppearance" formControlName="EpisodeAppearance" type="EpisodeAppearance" />
           </mat-checkbox>
         </div>
         <div>
-          <p>GetKill</p><mat-checkbox [indeterminate]="true" formControlName="GetKill">Previous Answer:
+          <p>GetKill</p><mat-checkbox [value]="pointValue.GetKill" formControlName="GetKill">Previous Answer:
             <input matInput placeholder="GetKill" formControlName="GetKill" type="GetKill" />
           </mat-checkbox>
         </div>
         <div>
-          <p>Death</p><mat-checkbox [indeterminate]="true" formControlName="Death">Previous Answer:
+          <p>Death</p><mat-checkbox [value]="pointValue.Death" formControlName="Death">Previous Answer:
             <input matInput placeholder="Death" formControlName="Death" type="Death" />
           </mat-checkbox>
         </div>
         <div>
-          <p>Big Kill</p><mat-checkbox [indeterminate]="true" formControlName="BigKill">Previous Answer:
+          <p>Big Kill</p><mat-checkbox [value]="pointValue.BigKill" formControlName="BigKill">Previous Answer:
             <input matInput placeholder="BigKill" formControlName="BigKill" type="BigKill" />
           </mat-checkbox>
         </div>
