@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from "@angular/forms";
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {
   MatToolbarModule,
@@ -12,9 +13,9 @@ import {
   MatTableModule,
   MatCheckboxModule,
   MatSelectModule,
+  MatSortModule,
 } from '@angular/material';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './components/user/user.component';
@@ -24,10 +25,9 @@ import { HomeComponent } from './components/home/home.component';
 import { NavComponent } from './components/nav/nav.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { CharacterComponent } from './components/character/character.component';
-import { TeamComponent } from './components/team/team.component';
 import { TeamService } from 'src/app/services/team.service';
 import { CharacterService } from './services/character.service';
+import { TeamCharacterService} from './services/teamCharacter.service';
 import { CharacterIndexComponent } from './components/character/character-index/character-index.component';
 import { CharacterCreateComponent } from './components/character/character-create/character-create.component';
 import { CharacterDetailComponent } from './components/character/character-detail/character-detail.component';
@@ -46,6 +46,7 @@ import { PointValueCreateComponent } from './components/pointvalue/pointvalue-cr
 import { PointValueDetailComponent } from './components/pointvalue/pointvalue-detail/pointvalue-detail.component';
 import { PointValueEditComponent } from './components/pointvalue/pointvalue-edit/pointvalue-edit.component';
 import { PointValueDeleteComponent } from './components/pointvalue/pointvalue-delete/pointvalue-delete.component';
+import { AddCharactersToTeamComponent } from './components/team/add-characters-to-team/add-characters.component';
 
 @NgModule({
   declarations: [
@@ -56,8 +57,6 @@ import { PointValueDeleteComponent } from './components/pointvalue/pointvalue-de
     NavComponent,
     AboutComponent,
     ContactComponent,
-    CharacterComponent,
-    TeamComponent,
     CharacterIndexComponent,
     CharacterCreateComponent,
     CharacterDetailComponent,
@@ -74,7 +73,8 @@ import { PointValueDeleteComponent } from './components/pointvalue/pointvalue-de
     PointValueCreateComponent,
     PointValueDetailComponent,
     PointValueEditComponent,
-    PointValueDeleteComponent
+    PointValueDeleteComponent,
+    AddCharactersToTeamComponent
   ],
   imports: [
     BrowserModule,
@@ -89,13 +89,15 @@ import { PointValueDeleteComponent } from './components/pointvalue/pointvalue-de
     MatInputModule,
     MatTableModule,
     MatCheckboxModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSortModule
   ],
   providers: [
     UserService,
     CharacterService,
     TeamService,
     PointValueService,
+    TeamCharacterService,
   ],
   bootstrap: [AppComponent]
 })
