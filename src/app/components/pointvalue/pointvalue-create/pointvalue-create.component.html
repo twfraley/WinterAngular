@@ -3,37 +3,19 @@
 <div class="container">
 
 <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="pointValueForm">
-  <div>
-    <div>
-      <mat-form-field>
-        <input matInput placeholder="CharacterId" formControlName="CharacterId" type="CharacterId" required/>
-      </mat-form-field>
- </div>
-    <!-- <div>
-      <mat-checkbox>
-        <label>Did this character survive the episode?</label><input type="checkbox" checked="checked" id="SurvivedEpisode" />
-      </mat-checkbox>
-    </div>
-    <div>
-      <form>
-        <label>Did this character appear in the episode?</label><input type="checkbox" checked="checked" id="EpisodeAppearance" />
-      </form>
-    </div>
-    <div>
-      <form>
-        <label>Did this character get a kill in the episode?</label><input type="checkbox" checked="checked" id="GetKill" />
-      </form>
-    </div>
-    <div>
-      <form>
-        <label>Did this character die in the episode?</label><input type="checkbox" checked="checked" id="Death" />
-      </form>
-    </div>
-    <div>
-      <form>
-        <label>Did this character kill another main character or a White Walker?</label><input type="checkbox" checked="checked" id="BigKill" />
-      </form>
-    </div> -->
+ <div>
+   <div>
+    <h4>Character Select</h4>
+    <mat-form-field>
+      <mat-label>Character</mat-label>
+      <mat-select formControlName="CharacterId" type="CharacterId" required>
+        <mat-option>--</mat-option>
+        <mat-option *ngFor="let characters of characters" [value]="characters.id">
+          {{characters.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+</div>
     <div>
       <mat-checkbox [indeterminate]="true" formControlName="SurvivedEpisode">
         <input matInput placeholder="SurvivedEpisode" formControlName="SurvivedEpisode" type="SurvivedEpisode" />

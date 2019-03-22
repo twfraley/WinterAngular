@@ -11,6 +11,7 @@ import {
   MatInputModule,
   MatTableModule,
   MatCheckboxModule,
+  MatSelectModule,
 } from '@angular/material';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -88,6 +89,7 @@ import { PointValueDeleteComponent } from './components/pointvalue/pointvalue-de
     MatInputModule,
     MatTableModule,
     MatCheckboxModule,
+    MatSelectModule
   ],
   providers: [
     UserService,

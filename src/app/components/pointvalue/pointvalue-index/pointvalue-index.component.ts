@@ -10,6 +10,8 @@ import { MatTableDataSource } from '@angular/material';
 })
 export class PointValueIndexComponent implements OnInit {
 
+  value: boolean = true;
+
   pointValueColumnNames = ['CharacterId', 'SurvivedEpisode', 'EpisodeAppearance', 'GetKill', 'Death', 'BigKill', 'buttons'];
 
   constructor(private _pointValueService: PointValueService) { }
