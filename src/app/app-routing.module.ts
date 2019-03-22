@@ -13,17 +13,16 @@ import { CharacterEditComponent } from './components/character/character-edit/ch
 import { CharacterDeleteComponent } from './components/character/character-delete/character-delete.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { LogoutComponent } from './components/user/logout/logout.component';
-import { TeamComponent } from './components/team/team.component';
 import { TeamIndexComponent } from './components/team/team-index/team-index.component';
 import { TeamDetailComponent } from './components/team/team-detail/team-detail.component';
 import { TeamEditComponent } from './components/team/team-edit/team-edit.component';
 import { TeamCreateComponent } from './components/team/team-create/team-create.component';
+import { AddCharactersToTeamComponent } from './components/team/add-characters-to-team/add-characters.component';
 import { PointValueIndexComponent } from './components/pointvalue/pointvalue-index/pointvalue-index.component';
 import { PointValueCreateComponent } from './components/pointvalue/pointvalue-create/pointvalue-create.component';
 import { PointValueDetailComponent } from './components/pointvalue/pointvalue-detail/pointvalue-detail.component';
 import { PointValueEditComponent } from './components/pointvalue/pointvalue-edit/pointvalue-edit.component';
 import { PointValueDeleteComponent } from './components/pointvalue/pointvalue-delete/pointvalue-delete.component';
-import { AddCharactersToTeamComponent } from './components/team/add-characters-to-team/add-characters.component';
 
 const routes: Routes = 
 [
