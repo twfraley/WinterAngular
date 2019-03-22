@@ -22,17 +22,7 @@ export class AddCharactersToTeamComponent implements OnInit {
   charactersOnTeam: Character[];
 
   ngOnInit() {
-    this._activatedRoute.paramMap.subscribe(routeData => {
-      this._teamService.getTeam(routeData.get('id')).subscribe(
-        (singleTeam: TeamDetail) => this.team = singleTeam
-      );
-    });
-
-    this._characterService.getCharacters().subscribe(
-      (characters: Character[]) =>
-        this.characters = characters
-    );
-
+    this.fetchData();
   }
 
   onSubmit(character: Character) {
@@ -41,8 +31,19 @@ export class AddCharactersToTeamComponent implements OnInit {
       TeamId: this.team.TeamId
     }
 
-    // ROUTING IS BROKEN STILL - DON'T MOVE ON
-    this._teamCharacterService.createTeamCharacter(teamCharacter).subscribe( data => this._router.navigate([`/manageTeam/${this.team.TeamId}`], {relativeTo: this._activatedRoute}));
+    this._teamCharacterService.createTeamCharacter(teamCharacter).subscribe(() => { this.fetchData() })
     console.log(teamCharacter);
   }
+
+  fetchData() {
+    this._activatedRoute.paramMap.subscribe(routeData => {
+      this._teamService.getTeam(routeData.get('id')).subscribe(
+        (singleTeam: TeamDetail) => this.team = singleTeam);
+    });
+
+    this._characterService.getCharacters().subscribe(
+      (characters: Character[]) =>
+        this.characters = characters);
+  }
+
 }

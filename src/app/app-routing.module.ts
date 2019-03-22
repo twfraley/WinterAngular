@@ -17,6 +17,7 @@ import { TeamIndexComponent } from './components/team/team-index/team-index.comp
 import { TeamDetailComponent } from './components/team/team-detail/team-detail.component';
 import { TeamEditComponent } from './components/team/team-edit/team-edit.component';
 import { TeamCreateComponent } from './components/team/team-create/team-create.component';
+import { TeamDeleteComponent } from './components/team/team-delete/team-delete.component';
 import { AddCharactersToTeamComponent } from './components/team/add-characters-to-team/add-characters.component';
 import { PointValueIndexComponent } from './components/pointvalue/pointvalue-index/pointvalue-index.component';
 import { PointValueCreateComponent } from './components/pointvalue/pointvalue-create/pointvalue-create.component';
@@ -55,6 +56,7 @@ const routes: Routes =
       { path: 'edit/:id', component: TeamEditComponent },
       { path: 'create', component: TeamCreateComponent },
       { path: 'manageTeam/:id', component: AddCharactersToTeamComponent},
+      { path: 'delete/:id', component: TeamDeleteComponent}
     ]
   },
   {

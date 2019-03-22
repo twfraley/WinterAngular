@@ -4,8 +4,9 @@
   <div class=container>
     <h2>{{team.TeamName}}</h2>
     <h4>TeamId: {{team.TeamId}}</h4>
-    <button mat-button color="accent" routerLink="/team/manageTeam/{{team.TeamId}}">Manage Team</button>
+    <button mat-button color="primary" routerLink="/team/manageTeam/{{team.TeamId}}">Manage Team</button>
     <button mat-button color="primary" routerLink="/team">Back To List</button>
+    <button mat-button color="accent" routerLink="/team/delete/{{team.TeamId}}">Delete Team</button>
   </div>
   <div class="list-group">
     <div *ngFor="let character of team.Characters" class="list-group-item" >

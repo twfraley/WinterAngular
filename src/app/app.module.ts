@@ -46,6 +46,7 @@ import { PointValueDetailComponent } from './components/pointvalue/pointvalue-de
 import { PointValueEditComponent } from './components/pointvalue/pointvalue-edit/pointvalue-edit.component';
 import { PointValueDeleteComponent } from './components/pointvalue/pointvalue-delete/pointvalue-delete.component';
 import { AddCharactersToTeamComponent } from './components/team/add-characters-to-team/add-characters.component';
+import { TeamDeleteComponent } from './components/team/team-delete/team-delete.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,8 @@ import { AddCharactersToTeamComponent } from './components/team/add-characters-t
     PointValueDetailComponent,
     PointValueEditComponent,
     PointValueDeleteComponent,
-    AddCharactersToTeamComponent
+    AddCharactersToTeamComponent,
+    TeamDeleteComponent
   ],
   imports: [
     BrowserModule,
