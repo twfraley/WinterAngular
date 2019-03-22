@@ -25,50 +25,52 @@ import { PointValueDetailComponent } from './components/pointvalue/pointvalue-de
 import { PointValueEditComponent } from './components/pointvalue/pointvalue-edit/pointvalue-edit.component';
 import { PointValueDeleteComponent } from './components/pointvalue/pointvalue-delete/pointvalue-delete.component';
 
-const routes: Routes = 
-[
-  { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'nav', component: NavComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  {
-    path: 'user', children: [
-      { path: '', component: UserComponent },
-      { path: 'registration', component: RegistrationComponent },
-      { path: 'login', component: LoginComponent },
-      { path: 'logout', component: LogoutComponent }
-    ]
-  },
+const routes: Routes =
+  [
+    { path: 'home', component: HomeComponent },
+    { path: 'about', component: AboutComponent },
+    { path: 'nav', component: NavComponent },
+    { path: 'contact', component: ContactComponent },
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    {
+      path: 'user', children: [
+        { path: '', component: UserComponent },
+        { path: 'registration', component: RegistrationComponent },
+        { path: 'login', component: LoginComponent },
+        { path: 'logout', component: LogoutComponent }
+      ]
+    },
 
-  { path: 'characters', children: [
-    { path: '', component: CharacterIndexComponent },
-    { path: 'create', component: CharacterCreateComponent },
-    { path: 'detail/:id', component: CharacterDetailComponent },
-    { path: 'edit/:id', component: CharacterEditComponent },
-    { path: 'delete/:id', component: CharacterDeleteComponent }
-  ]},
-  {
-    path: 'team', children: [
-      { path: '', component: TeamIndexComponent },
-      { path: 'detail/:id', component: TeamDetailComponent },
-      { path: 'addCharacter/:id', component: AddCharactersToTeamComponent},
-      { path: 'edit/:id', component: TeamEditComponent },
-      { path: 'create', component: TeamCreateComponent },
-      { path: 'manageTeam/:id', component: AddCharactersToTeamComponent},
-      { path: 'delete/:id', component: TeamDeleteComponent}
-    ]
-  },
-  {
-    path: 'pointvalues', children: [
-      { path: '', component: PointValueIndexComponent },
-      { path: 'detail/:id', component: PointValueDetailComponent },
-      { path: 'edit/:id', component: PointValueEditComponent },
-      { path: 'create', component: PointValueCreateComponent },
-      { path: 'delete/:id', component: PointValueDeleteComponent }
-    ]
-  },
-];
+    {
+      path: 'characters', children: [
+        { path: '', component: CharacterIndexComponent },
+        { path: 'create', component: CharacterCreateComponent },
+        { path: 'detail/:id', component: CharacterDetailComponent },
+        { path: 'edit/:id', component: CharacterEditComponent },
+        { path: 'delete/:id', component: CharacterDeleteComponent }
+      ]
+    },
+    {
+      path: 'team', children: [
+        { path: '', component: TeamIndexComponent },
+        { path: 'detail/:id', component: TeamDetailComponent },
+        { path: 'addCharacter/:id', component: AddCharactersToTeamComponent },
+        { path: 'edit/:id', component: TeamEditComponent },
+        { path: 'create', component: TeamCreateComponent },
+        { path: 'manageTeam/:id', component: AddCharactersToTeamComponent },
+        { path: 'delete/:id', component: TeamDeleteComponent }
+      ]
+    },
+    {
+      path: 'pointvalues', children: [
+        { path: '', component: PointValueIndexComponent },
+        { path: 'detail/:id', component: PointValueDetailComponent },
+        { path: 'edit/:id', component: PointValueEditComponent },
+        { path: 'create', component: PointValueCreateComponent },
+        { path: 'delete/:id', component: PointValueDeleteComponent }
+      ]
+    },
+  ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
