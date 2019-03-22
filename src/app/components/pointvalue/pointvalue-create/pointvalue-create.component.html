@@ -1,0 +1,48 @@
+<h1>Create Point Values.</h1>
+<hr>
+<div class="container">
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="pointValueForm">
+ <div>
+   <div>
+    <h4>Character Select</h4>
+    <mat-form-field>
+      <mat-label>Character</mat-label>
+      <mat-select formControlName="CharacterId" type="CharacterId" required>
+        <mat-option>--</mat-option>
+        <mat-option *ngFor="let character of characterSelect" [value]="character.CharacterId">
+          {{character.CharacterName}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+</div>
+    <div>
+      <mat-checkbox [indeterminate]="true" formControlName="SurvivedEpisode">
+        <input matInput placeholder="SurvivedEpisode" formControlName="SurvivedEpisode" type="SurvivedEpisode" />
+      </mat-checkbox>
+    </div>
+    <div>
+        <mat-checkbox [indeterminate]="true" formControlName="EpisodeAppearance">
+          <input matInput placeholder="EpisodeAppearance" formControlName="EpisodeAppearance" type="EpisodeAppearance" />
+        </mat-checkbox>
+      </div>
+      <div>
+        <mat-checkbox [indeterminate]="true" formControlName="GetKill">
+          <input matInput placeholder="GetKill" formControlName="GetKill" type="GetKill" />
+        </mat-checkbox>
+      </div>
+      <div>
+        <mat-checkbox [indeterminate]="true" formControlName="Death">
+          <input matInput placeholder="Death" formControlName="Death" type="Death" />
+        </mat-checkbox>
+      </div>
+      <div>
+        <mat-checkbox [indeterminate]="true" formControlName="BigKill">
+          <input matInput placeholder="BigKill" formControlName="BigKill" type="BigKill" />
+        </mat-checkbox>
+      </div>
+  </div>
+  <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Point Value</button>
+  <br>
+  <a mat-button routerLink="/pointvalues">Back to List</a>
+</form>

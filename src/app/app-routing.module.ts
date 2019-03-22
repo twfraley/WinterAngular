@@ -17,6 +17,11 @@ import { TeamIndexComponent } from './components/team/team-index/team-index.comp
 import { TeamDetailComponent } from './components/team/team-detail/team-detail.component';
 import { TeamEditComponent } from './components/team/team-edit/team-edit.component';
 import { TeamCreateComponent } from './components/team/team-create/team-create.component';
+import { PointValueIndexComponent } from './components/pointvalue/pointvalue-index/pointvalue-index.component';
+import { PointValueCreateComponent } from './components/pointvalue/pointvalue-create/pointvalue-create.component';
+import { PointValueDetailComponent } from './components/pointvalue/pointvalue-detail/pointvalue-detail.component';
+import { PointValueEditComponent } from './components/pointvalue/pointvalue-edit/pointvalue-edit.component';
+import { PointValueDeleteComponent } from './components/pointvalue/pointvalue-delete/pointvalue-delete.component';
 import { AddCharactersToTeamComponent } from './components/team/add-characters-to-team/add-characters.component';
 
 const routes: Routes = [
@@ -48,6 +53,15 @@ const routes: Routes = [
       { path: 'edit/:id', component: TeamEditComponent },
       { path: 'create', component: TeamCreateComponent },
       { path: 'manageTeam/:id', component: AddCharactersToTeamComponent},
+    ]
+  },
+  {
+    path: 'pointvalues', children: [
+      { path: '', component: PointValueIndexComponent },
+      { path: 'detail/:id', component: PointValueDetailComponent },
+      { path: 'edit/:id', component: PointValueEditComponent },
+      { path: 'create', component: PointValueCreateComponent },
+      { path: 'delete/:id', component: PointValueDeleteComponent }
     ]
   },
 ];
