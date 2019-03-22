@@ -10,7 +10,7 @@ import { MatTableDataSource } from '@angular/material';
 })
 export class TeamIndexComponent implements OnInit {
 
-  teamColumnNames = ['details', 'TeamId', 'TeamName', 'TotalPoints', 'Characters'];
+  teamColumnNames = ['details', 'TeamName', 'TotalPoints', 'Characters'];
 
   constructor(private _teamService: TeamService) { }
   
@@ -21,7 +21,6 @@ export class TeamIndexComponent implements OnInit {
       this.dataSource = new MatTableDataSource<TeamDetail>(teams);
     });
 
-    console.log(this.dataSource);
   }
 
 }

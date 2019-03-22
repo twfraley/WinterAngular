@@ -1,0 +1,21 @@
+.container {
+    text-align: center;
+    position: relative;
+    color: black;;
+    width: 50%;
+   }
+   
+   label {
+       float: left;
+   }
+   
+   button {
+       background-color: black;
+       color: white;
+   }
+   
+   button:hover {
+       background-color: grey;
+       color: white;
+       text-decoration: underline;
+   }

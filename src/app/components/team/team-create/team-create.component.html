@@ -1,3 +1,18 @@
-<p>
-  team-create works!
-</p>
+<h1>Create a Team</h1>
+<hr>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="teamForm">
+  <div class="align-center">
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Team Name" formControlName="TeamName" type="TeamName" required />
+      </mat-form-field>
+    </div>
+  </div>
+  <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Team</button>
+  <br>
+  <a mat-button routerLink="/team">Back to List</a>
+</form>
+
+<div class="container">
+  <img src="assets/img/TeamAssets/WesterosCrown.png" class="">
+</div>
