@@ -13,6 +13,7 @@ import { CharacterEditComponent } from './components/character/character-edit/ch
 import { CharacterDeleteComponent } from './components/character/character-delete/character-delete.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { LogoutComponent } from './components/user/logout/logout.component';
+import { TeamComponent } from './components/team/team.component';
 import { TeamIndexComponent } from './components/team/team-index/team-index.component';
 import { TeamDetailComponent } from './components/team/team-detail/team-detail.component';
 import { TeamEditComponent } from './components/team/team-edit/team-edit.component';
@@ -24,7 +25,8 @@ import { PointValueEditComponent } from './components/pointvalue/pointvalue-edit
 import { PointValueDeleteComponent } from './components/pointvalue/pointvalue-delete/pointvalue-delete.component';
 import { AddCharactersToTeamComponent } from './components/team/add-characters-to-team/add-characters.component';
 
-const routes: Routes = [
+const routes: Routes = 
+[
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'nav', component: NavComponent },
@@ -38,6 +40,7 @@ const routes: Routes = [
       { path: 'logout', component: LogoutComponent }
     ]
   },
+
   { path: 'characters', children: [
     { path: '', component: CharacterIndexComponent },
     { path: 'create', component: CharacterCreateComponent },

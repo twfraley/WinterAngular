@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from "@angular/forms";
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -25,6 +24,8 @@ import { HomeComponent } from './components/home/home.component';
 import { NavComponent } from './components/nav/nav.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { CharacterComponent } from './components/character/character.component';
+import { TeamComponent } from './components/team/team.component';
 import { TeamService } from 'src/app/services/team.service';
 import { CharacterService } from './services/character.service';
 import { TeamCharacterService} from './services/teamCharacter.service';
@@ -80,6 +81,7 @@ import { AddCharactersToTeamComponent } from './components/team/add-characters-t
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
