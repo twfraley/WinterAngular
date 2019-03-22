@@ -37,3 +37,12 @@ a:hover {
     color: rgb(238, 245, 235);
     
 }
+
+.nav-tabs {
+    display: inline-flex;
+}
+
+nav {
+    margin-top: 0;
+    padding-top: 0;
+}
