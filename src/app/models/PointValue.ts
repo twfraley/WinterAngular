@@ -1,5 +1,3 @@
-import { Character } from './Character';
-
 export interface PointValue {
     PointValueId: number;
     CharacterId: number;
