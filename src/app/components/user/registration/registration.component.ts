@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class RegistrationComponent implements OnInit {
 
-  private _registerForm: FormGroup;
+  _registerForm: FormGroup;
   private _email: FormControl;
   private _password: FormControl;
   private _confirmPassword: FormControl;
