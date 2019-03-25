@@ -1,7 +1,9 @@
 <h1>Character Index</h1>
 <a mat-raised-button class="createButton" color="primary" routerLink="/characters/create">Create New</a>
 <hr>
-
+<div class="container">
+  <img src="https://imagesvc.timeincapp.com/v3/fan/image?url=https%3A%2F%2Fwinteriscoming.net%2Ffiles%2F2018%2F05%2FGOT125-32x18-MAIN-SITE.jpg&c=sc&w=736&h=485" class="center">
+  </div>
 <div>
   <mat-table #table [dataSource]="dataSource">
     <mat-header-row *matHeaderRowDef="characterColumnNames"></mat-header-row>
@@ -19,15 +21,15 @@
 
     <ng-container matColumnDef="ImageLink">
       <mat-header-cell *matHeaderCellDef></mat-header-cell>
-      <mat-cell *matCellDef="let character"><img [src]="character.ImageLink" style="width:40%; height: 40%; border-radius: 50%;" routerLink="/characters/detail/{{character.CharacterId}}"> </mat-cell>
+      <mat-cell *matCellDef="let character"><img [src]="character.ImageLink" style="width:40%; height: 40%; border-radius: 50%;" class="thumbnail clickable" routerLink="/characters/detail/{{character.CharacterId}}"> </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="buttons">
       <mat-header-cell *matHeaderCellDef> Edit / Delete / Details </mat-header-cell>
       <mat-cell *matCellDef="let character">
-        <i mat-icon class="material-icons" routerLink="/characters/edit/{{character.CharacterId}}">edit</i>
-        <i class="material-icons" routerLink="/characters/delete/{{character.CharacterId}}">delete</i>
-        <i class="material-icons" routerLink="/characters/detail/{{character.CharacterId}}">account_circle</i>
+        <i mat-icon class="material-icons clickable" routerLink="/characters/edit/{{character.CharacterId}}">edit</i>
+        <i class="material-icons clickable" routerLink="/characters/delete/{{character.CharacterId}}">delete</i>
+        <i class="material-icons clickable" routerLink="/characters/detail/{{character.CharacterId}}">account_circle</i>
       </mat-cell>
     </ng-container>
 

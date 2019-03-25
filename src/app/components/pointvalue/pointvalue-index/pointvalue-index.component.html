@@ -32,7 +32,10 @@
       <td class="tg-a3db">+10 points</td>
     </tr>
   </table>
+  <br>
 <div>
+
+
   <mat-table #table [dataSource]="dataSource">
     <mat-header-row *matHeaderRowDef="pointValueColumnNames"></mat-header-row>
     <mat-row *matRowDef="let row; columns: pointValueColumnNames;"></mat-row>
@@ -44,7 +47,7 @@
 
     <ng-container matColumnDef="CharacterId">
       <mat-header-cell *matHeaderCellDef> Character </mat-header-cell>
-      <mat-cell *matCellDef="let pointValue"> <div *ngFor="let character of characters"> <img *ngIf="pointValue.CharacterId === character.CharacterId" [src]="character.ImageLink" style="width:40%; height: 40%; border-radius: 50%;" routerLink="/characters/detail/{{character.CharacterId}}"></div> </mat-cell>
+      <mat-cell *matCellDef="let pointValue"> <div *ngFor="let character of characters"> <img *ngIf="pointValue.CharacterId === character.CharacterId" [src]="character.ImageLink" style="width:40%; height: 40%; border-radius: 50%;" routerLink="/characters/detail/{{character.CharacterId}}" class="clickable"></div> </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="SurvivedEpisode">
@@ -75,9 +78,11 @@
     <ng-container matColumnDef="buttons">
       <mat-header-cell *matHeaderCellDef> Edit / Delete / Details </mat-header-cell>
       <mat-cell *matCellDef="let pointValue">
-        <i mat-icon class="material-icons" routerLink="/pointvalues/edit/{{pointValue.PointValueId}}">edit</i>
-        <i class="material-icons" routerLink="/pointvalues/delete/{{pointValue.PointValueId}}">delete</i>
-        <i class="material-icons" routerLink="/pointvalues/detail/{{pointValue.PointValueId}}">account_circle</i>
+        <div class="button">
+        <i mat-icon class="material-icons clickable" routerLink="/pointvalues/edit/{{pointValue.PointValueId}}">edit</i>
+        <i class="material-icons clickable" routerLink="/pointvalues/delete/{{pointValue.PointValueId}}">delete</i>
+        <i class="material-icons clickable" routerLink="/pointvalues/detail/{{pointValue.PointValueId}}">account_circle</i>
+      </div>
       </mat-cell>
     </ng-container>
 
