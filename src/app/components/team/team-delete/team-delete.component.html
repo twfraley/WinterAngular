@@ -1,0 +1,16 @@
+<h1>Delete</h1>
+
+<div *ngIf="team">
+  <div class=container>
+    <h2>{{team.TeamName}}</h2>
+    <h4 [hidden]>TeamId: {{team.TeamId}}</h4>
+  </div>
+
+  <div class="list-group">
+    <div *ngFor="let character of team.Characters" class="list-group-item">
+      {{character.CharacterName}}</div>
+  </div>
+
+  <button mat-flat-button color="accent" (click)="deleteTeam()">Delete Team</button>
+
+</div>
