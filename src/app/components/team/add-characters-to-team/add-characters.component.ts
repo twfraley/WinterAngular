@@ -18,6 +18,7 @@ export class AddCharactersToTeamComponent implements OnInit {
   constructor(private _activatedRoute: ActivatedRoute, private _router: Router, private _teamCharacterService: TeamCharacterService, private _teamService: TeamService, private _characterService: CharacterService) { }
 
   team: TeamDetail;
+  _notTeam: TeamDetail;
   characters: Character[];
   charactersOnTeam: Character[];
 
@@ -40,10 +41,11 @@ export class AddCharactersToTeamComponent implements OnInit {
       this._teamService.getTeam(routeData.get('id')).subscribe(
         (singleTeam: TeamDetail) => this.team = singleTeam);
     });
-
-    this._characterService.getCharacters().subscribe(
-      (characters: Character[]) =>
-        this.characters = characters);
+    
+    this._activatedRoute.paramMap.subscribe(routeData => {
+      this._teamService.getAllButTeam(routeData.get('id')).subscribe(
+        (characters: Character[]) => this.characters = characters);
+    });
   }
 
 }
