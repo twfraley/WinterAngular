@@ -3,4 +3,5 @@ export interface Character {
     CharacterName: string;
     House: string;
     ImageLink: string;
+    EarnedPoints?: number;
 }
