@@ -26,15 +26,15 @@
     <ng-container matColumnDef="Characters">
       <mat-header-cell *matHeaderCellDef> Characters: </mat-header-cell>
       <mat-cell *matCellDef="let  teamDetail">
-        <img *ngFor="let character of teamDetail.Characters" src="{{ character.ImageLink }}" class="thumbnailImages" routerLink="/characters/detail/{{ character.CharacterId }}">
+        <img *ngFor="let character of teamDetail.Characters" src="{{ character.ImageLink }}" class="thumbnailImages clickable" routerLink="/characters/detail/{{ character.CharacterId }}">
       </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="buttons">
       <mat-header-cell *matHeaderCellDef> </mat-header-cell>
       <mat-cell *matCellDef="let teamDetail">
-        <i mat-icon class="material-icons">edit</i>
-        <i class="material-icons">delete</i>
+        <i mat-icon class="material-icons clickable">edit</i>
+        <i class="material-icons clickable">delete</i>
       </mat-cell>
     </ng-container>
 

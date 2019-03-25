@@ -17,34 +17,36 @@ export class AddCharactersToTeamComponent implements OnInit {
 
   constructor(private _activatedRoute: ActivatedRoute, private _router: Router, private _teamCharacterService: TeamCharacterService, private _teamService: TeamService, private _characterService: CharacterService) { }
 
-  team: TeamDetail;
+  _team: TeamDetail;
   _notTeam: TeamDetail;
-  characters: Character[];
-  charactersOnTeam: Character[];
+  _charactersNotOnTeam: Character[];
 
   ngOnInit() {
     this.fetchData();
   }
 
-  onSubmit(character: Character) {
+  addCharacter(character: Character) {
     let teamCharacter: TeamCharacterCreate = {
       CharacterId: character.CharacterId,
-      TeamId: this.team.TeamId
+      TeamId: this._team.TeamId
     }
 
     this._teamCharacterService.createTeamCharacter(teamCharacter).subscribe(() => { this.fetchData() })
-    console.log(teamCharacter);
+  }
+
+  removeFromTeam(character:Character) {
+    this._teamCharacterService.deleteTeamCharacter(character.CharacterId, this._team.TeamId).subscribe(() => {this.fetchData() })
   }
 
   fetchData() {
     this._activatedRoute.paramMap.subscribe(routeData => {
       this._teamService.getTeam(routeData.get('id')).subscribe(
-        (singleTeam: TeamDetail) => this.team = singleTeam);
+        (singleTeam: TeamDetail) => this._team = singleTeam);
     });
     
     this._activatedRoute.paramMap.subscribe(routeData => {
       this._teamService.getAllButTeam(routeData.get('id')).subscribe(
-        (characters: Character[]) => this.characters = characters);
+        (characters: Character[]) => this._charactersNotOnTeam = characters);
     });
   }
 

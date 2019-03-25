@@ -22,8 +22,6 @@ export class TeamDetailComponent implements OnInit {
       this._teamService.getTeam(routeData.get('id')).subscribe(
         (singleTeam: TeamDetail) => {this.team = singleTeam})
     });
-    
-    this._characterService.getCharacters().subscribe((characterList: Character[]) => this.characters = characterList);
   }
 
 }
