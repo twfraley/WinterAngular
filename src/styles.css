@@ -21,14 +21,14 @@ body{
   font-size: 14px;
   color: black;
   background: linear-gradient(
-        to bottom, #ffffff40,whitesmoke
+        to bottom, #ffffff40,rgba(245, 245, 245, 0.644)
     ); 
 }
 
 .mat-header-row{
   font-size: 20px;
   color: black;
-  background: #ffffff8c;
+  background: #ffffffab;
 
 }
 .mat-header-cell {
