@@ -10,7 +10,7 @@ html {
 }
 
 body{
-    background-image: url("assets/img/fence-snow-trees-65911.jpg");
+    background-image: url("https://i.pinimg.com/originals/45/92/d0/4592d073168663d9499b1f7c1535fb32.jpg");
     background-size: cover;
     background-attachment: fixed;
     font-family: 'Cinzel Decorative', cursive;
@@ -21,14 +21,14 @@ body{
   font-size: 14px;
   color: black;
   background: linear-gradient(
-        to bottom, #ffffff40,whitesmoke
+        to bottom, #ffffff40,rgba(245, 245, 245, 0.644)
     ); 
 }
 
 .mat-header-row{
   font-size: 20px;
   color: black;
-  background: #ffffff8c;
+  background: #ffffffab;
 
 }
 .mat-header-cell {
