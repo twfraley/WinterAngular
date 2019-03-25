@@ -9,7 +9,7 @@
     </div>
   </div>
   <div class="col-md-6 col-sm-12">
-    <form [formGroup]="this._loginForm" (submit)="onSubmit()">
+    <form [formGroup]="_loginForm" (submit)="onSubmit()">
       <div class="form-group required">
         <label>Email</label>
         <input class="form-control" formControlName="email">
