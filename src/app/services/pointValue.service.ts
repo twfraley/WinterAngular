@@ -18,6 +18,10 @@ export class PointValueService {
         return this._http.get(`${ApiUrl}/PointValues/Single/${id}`, { headers: this.getHeaders() });
     }
 
+    getPointValueByCharacterId(id: number) {
+        return this._http.get(`${ApiUrl}/PointValues/SingleByCharacter/${id}`, { headers: this.getHeaders() })
+    }
+
     createPointValue(pointValue: PointValueCreate) {
         return this._http.post(`${ApiUrl}/Values`, pointValue, {headers: this.getHeaders() });
     }
