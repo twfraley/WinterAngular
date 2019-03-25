@@ -19,6 +19,10 @@ export class TeamService {
     return this._http.get(`${ApiUrl}/Team/Single/${id}`, { headers: this.getHeaders() });
   }
 
+  getAllButTeam(id: string) {
+    return this._http.get(`${ApiUrl}/TeamCharacter/AllButTeam/${id}`, { headers: this.getHeaders() });
+  }
+
   createTeam(team: CreateTeam) {
     return this._http.post(`${ApiUrl}/Team`, team, { headers: this.getHeaders()});
   }
