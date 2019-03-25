@@ -5,10 +5,35 @@ html {
     font-family: 'Cinzel Decorative', cursive;
 }
 
+.clickable {
+  cursor: pointer;
+}
+
 body{
     background-image: url("assets/img/fence-snow-trees-65911.jpg");
     background-size: cover;
+    background-attachment: fixed;
     font-family: 'Cinzel Decorative', cursive;
+}
+
+.mat-table {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 14px;
+  color: black;
+  background: linear-gradient(
+        to bottom, #ffffff40,whitesmoke
+    ); 
+}
+
+.mat-header-row{
+  font-size: 20px;
+  color: black;
+  background: #ffffff8c;
+
+}
+.mat-header-cell {
+  font-size: 13px;
+  color: black;
 }
 
 input.form-control,input.form-control:focus{
@@ -54,7 +79,7 @@ div.side-header{
 }
 
 body {
-    background-color: #00adeb;
+    background-color: transparent;
   }
   #snowflakes {
     background: none;

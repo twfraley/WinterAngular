@@ -12,6 +12,11 @@
 
 .teamTableRow {
     background: linear-gradient(
-        to bottom, white,white,white,whitesmoke
+        to bottom, #ffffff40,whitesmoke
     ); 
+}
+
+i:hover {
+    border: 1px solid black;
+    border-radius: 10%;
 }

@@ -29,6 +29,10 @@ h1 {
     font-family: 'Cinzel Decorative', cursive;
 }
 
+img:hover {
+    box-shadow: none;
+}
+
 img {
     margin: 20px;
     border: 2px solid white;
@@ -37,4 +41,9 @@ img {
 	border-bottom-left-radius:10px;
     border-bottom-right-radius:0px;
     box-shadow: 0px -10px 30px black;
+}
+
+.button i:hover{
+    border: 1px solid black;
+    border-radius: 10%;
 }
