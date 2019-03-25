@@ -21,6 +21,8 @@ h1 {
 }
 
 h2 {
+    padding-top: 5%;
+    padding-bottom: 5%;
     text-shadow: 0 0 5px rgb(14, 13, 13), 0 0 7px rgb(15, 15, 17);
     margin-top: 5%;
     box-shadow: 3px 3px 6px 1px rgba(0, 0, 0, 0.36);
@@ -46,7 +48,7 @@ h4 {
     #303031);
 }
 
-img {
+.characterimg {
     margin-top: 5%;
     margin-bottom: 5%;
     width: 80%;
@@ -63,4 +65,71 @@ button {
     margin-bottom: 7%;
     font-size: 20px;
     text-shadow: 0 0 5px rgb(14, 13, 13), 0 0 7px rgb(15, 15, 17);
+}
+
+.housestark {
+    float: left;
+    margin-top: 10%;
+    margin-left: 5%;
+}
+
+.housetargaryen {
+    float: left;
+    margin-top: 13%;
+    margin-left: 5%;
+
+}
+
+.houselannister {
+    float: left;
+    margin-top: 13%;
+    margin-left: 7%;
+}
+
+.whitewalkers {
+    float: left;
+    margin-top: 13%;
+    margin-left: 6%;
+}
+
+.brotherhood {
+    float: left;
+    margin-top: 8%;
+    margin-left: 6%;
+}
+
+.greyjoy {
+    float: left;
+    margin-top: 15%;
+    margin-left: 6%;
+}
+
+.stokeworth {
+    float: left;
+    margin-top: 8%;
+    margin-left: 6%;
+}
+
+.mormont {
+    float: left;
+    margin-top: 15%;
+    margin-left: 6%;
+}
+
+.clegane {
+    float: left;
+    margin-top: 15%;
+    margin-left: 6%;
+}
+
+.tarth {
+    float: left;
+    margin-top: 15%;
+    margin-left: 6%;
+}
+
+.freefolk {
+    float: left;
+    margin-top: 15%;
+    margin-left: 6%;
 }
