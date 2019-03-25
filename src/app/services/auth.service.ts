@@ -14,6 +14,7 @@ export class AuthService {
   userInfo: Token;
   isLoggedIn = new Subject<boolean>();
 
+// tslint:disable-next-line: variable-name
   constructor(private _http: HttpClient, private _router: Router) { }
 
   register(regUserData: RegisterUser) {
