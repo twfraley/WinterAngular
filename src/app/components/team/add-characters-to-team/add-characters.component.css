@@ -1,9 +1,24 @@
 .med-img-circle{
+    border: 2px solid white;
+    box-shadow: 0px 10px 30px black;
+    margin: 20px;
     width: 100px;
     height: 100px;
     border-radius: 50%;
 }
 
+.med-img-circle:hover {
+    box-shadow: none;
+}
+
+.list-row {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5),
+        rgba(200, 200, 200, 0.5)
+    )
+      
 h1 {
     text-align:center;
     margin-top: 50px;
