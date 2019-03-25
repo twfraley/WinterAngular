@@ -17,9 +17,10 @@ i:hover {
     border-radius: 10%;
 }
 
-h1{
-    text-align: center;
+h1 {
+    text-align:center;
     margin-top: 50px;
+    text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 7px rgb(15, 15, 17);
 }
 
 .createButton {
@@ -39,7 +40,6 @@ h1{
 }
 
 mat-header-cell {
-    text-decoration: underline;
     font-size: 15px;
 }
 
@@ -47,10 +47,12 @@ mat-header-cell {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 30%;
-    border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-    border-bottom-right-radius:10px;
-    box-shadow: 0px -10px 30px black;
+}
+
+.imagelogo {
+    margin-left: 20%;
+}
+
+i {
+    margin-left: 3%;
 }
