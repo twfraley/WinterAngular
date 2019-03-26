@@ -4,9 +4,11 @@
   <div class=container>
     <h2>{{team.TeamName}}</h2>
     <h4>Total Points: {{team.TotalPoints}}</h4>
-    <button *ngIf="ownerCheck()" mat-button color="primary" routerLink="/team/manageTeam/{{team.TeamId}}">Manage Team</button>
-    <button *ngIf="ownerCheck()" mat-button color="accent" routerLink="/team/delete/{{team.TeamId}}">Delete Team</button>
-    <button mat-button color="primary" routerLink="/team">Back To List</button>
+    <div class="buttonContainer">
+    <button *ngIf="ownerCheck()" mat-raised-button class="button text-light" routerLink="/team/manageTeam/{{team.TeamId}}">Manage Team</button>
+    <button *ngIf="ownerCheck()" mat-raised-button class="button text-light" routerLink="/team/delete/{{team.TeamId}}">Delete Team</button>
+    <button mat-raised-button class="button text-light" routerLink="/team">Back To List</button>
+  </div>
   </div>
 
   <div class="list-group">

@@ -1,87 +1,101 @@
-<h1>PointValue Index</h1>
-<a *ngIf="authCheck()" mat-raised-button class="createButton" color="primary" routerLink="/pointvalues/create">Create New</a>
+<h1>Point Value System</h1>
+<a *ngIf="authCheck()" mat-raised-button class="createButton button text-light" routerLink="/pointvalues/create">Create
+  New</a>
 <hr>
-<table class="tg">
-    <tr>
-      <th class="tg-qhx5" colspan="2">Character Scoring System</th>
-      <th class="tg-rku8">+/-</th>
-    </tr>
-    <tr>
-      <td class="tg-7hmc">Survived Episode</td>
-      <td class="tg-i8zc">Character survived the episode</td>
-      <td class="tg-a3db">+10 points</td>
-    </tr>
-    <tr>
-      <td class="tg-7hmc">Episode Appearance</td>
-      <td class="tg-i8zc">Character appeared in the episode</td>
-      <td class="tg-a3db">+4 points</td>
-    </tr>
-    <tr>
-      <td class="tg-7hmc">Got a Kill</td>
-      <td class="tg-i8zc">Character got a kill in the episode</td>
-      <td class="tg-a3db">+5 points</td>
-    </tr>
-    <tr>
-      <td class="tg-7hmc">Died</td>
-      <td class="tg-i8zc">Character died in the episode</td>
-      <td class="tg-a3db">-10 points</td>
-    </tr>
-    <tr>
-      <td class="tg-7hmc">Big Kill</td>
-      <td class="tg-i8zc">Character killed another Main Character or White Walker</td>
-      <td class="tg-a3db">+10 points</td>
-    </tr>
-  </table>
-  <br>
-<div>
 
+<h2 *ngIf="!loggedInCheck()"> Log in to view points. </h2>
 
+<table *ngIf="loggedInCheck()" class="tg">
+  <tr>
+    <th class="tg-qhx5" colspan="2">Character Scoring System</th>
+    <th class="tg-rku8">+/-</th>
+  </tr>
+  <tr>
+    <td class="tg-7hmc">Survived Episode</td>
+    <td class="tg-i8zc">Character survived the episode</td>
+    <td class="tg-a3db">+10 points</td>
+  </tr>
+  <tr>
+    <td class="tg-7hmc">Episode Appearance</td>
+    <td class="tg-i8zc">Character appeared in the episode</td>
+    <td class="tg-a3db">+4 points</td>
+  </tr>
+  <tr>
+    <td class="tg-7hmc">Got a Kill</td>
+    <td class="tg-i8zc">Character got a kill in the episode</td>
+    <td class="tg-a3db">+5 points</td>
+  </tr>
+  <tr>
+    <td class="tg-7hmc">Died</td>
+    <td class="tg-i8zc">Character died in the episode</td>
+    <td class="tg-a3db">-10 points</td>
+  </tr>
+  <tr>
+    <td class="tg-7hmc">Big Kill</td>
+    <td class="tg-i8zc">Character killed another Main Character or White Walker</td>
+    <td class="tg-a3db">+10 points</td>
+  </tr>
+</table>
+
+<br>
+
+<div *ngIf="loggedInCheck()">
   <mat-table #table [dataSource]="dataSource">
     <mat-header-row *matHeaderRowDef="pointValueColumnNames" class="my-2"></mat-header-row>
     <mat-row *matRowDef="let row; columns: pointValueColumnNames;" class="my-2"></mat-row>
 
-    <!-- <ng-container matColumnDef="CharacterId">
-      <mat-header-cell *matHeaderCellDef> Character ID# </mat-header-cell>
-      <mat-cell *matCellDef="let character"> {{character.CharacterId}} </mat-cell>
-    </ng-container> -->
-
     <ng-container matColumnDef="CharacterId">
       <mat-header-cell *matHeaderCellDef> Character </mat-header-cell>
-      <mat-cell *matCellDef="let pointValue"> <div *ngFor="let character of characters"> <img *ngIf="pointValue.CharacterId === character.CharacterId" [src]="character.ImageLink" style="width:40%; height: 40%; border-radius: 50%;" routerLink="/characters/detail/{{character.CharacterId}}" class="clickable"></div> </mat-cell>
+      <mat-cell *matCellDef="let pointValue">
+        <div *ngFor="let character of characters"> <img *ngIf="pointValue.CharacterId === character.CharacterId"
+            [src]="character.ImageLink" style="width:40%; height: 40%; border-radius: 50%;"
+            routerLink="/characters/detail/{{character.CharacterId}}" class="clickable"></div>
+      </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="SurvivedEpisode">
       <mat-header-cell *matHeaderCellDef> Survived Episode </mat-header-cell>
-      <mat-cell *matCellDef="let pointValue"><i class="material-icons" *ngIf="pointValue.SurvivedEpisode === true">add_circle</i><i class="material-icons" *ngIf="pointValue.SurvivedEpisode === false">panorama_fish_eye</i></mat-cell>
+      <mat-cell *matCellDef="let pointValue"><i class="material-icons"
+          *ngIf="pointValue.SurvivedEpisode === true">add_circle</i><i class="material-icons"
+          *ngIf="pointValue.SurvivedEpisode === false">panorama_fish_eye</i></mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="EpisodeAppearance">
-        <mat-header-cell *matHeaderCellDef> Episode Appearance </mat-header-cell>
-        <mat-cell *matCellDef="let pointValue"><i class="material-icons" *ngIf="pointValue.EpisodeAppearance === true">add_circle</i><i class="material-icons" *ngIf="pointValue.EpisodeAppearance === false">panorama_fish_eye</i></mat-cell>
-      </ng-container>
+      <mat-header-cell *matHeaderCellDef> Episode Appearance </mat-header-cell>
+      <mat-cell *matCellDef="let pointValue"><i class="material-icons"
+          *ngIf="pointValue.EpisodeAppearance === true">add_circle</i><i class="material-icons"
+          *ngIf="pointValue.EpisodeAppearance === false">panorama_fish_eye</i></mat-cell>
+    </ng-container>
 
-      <ng-container matColumnDef="GetKill">
-          <mat-header-cell *matHeaderCellDef> Got a Kill </mat-header-cell>
-          <mat-cell *matCellDef="let pointValue"><i class="material-icons" *ngIf="pointValue.GetKill === true">add_circle</i><i class="material-icons" *ngIf="pointValue.GetKill === false">panorama_fish_eye</i></mat-cell>
-        </ng-container>
+    <ng-container matColumnDef="GetKill">
+      <mat-header-cell *matHeaderCellDef> Got a Kill </mat-header-cell>
+      <mat-cell *matCellDef="let pointValue"><i class="material-icons"
+          *ngIf="pointValue.GetKill === true">add_circle</i><i class="material-icons"
+          *ngIf="pointValue.GetKill === false">panorama_fish_eye</i></mat-cell>
+    </ng-container>
 
-        <ng-container matColumnDef="Death">
-            <mat-header-cell *matHeaderCellDef> Died </mat-header-cell>
-            <mat-cell *matCellDef="let pointValue"><i class="material-icons" *ngIf="pointValue.Death === true">remove_circle</i><i class="material-icons" *ngIf="pointValue.Death === false">panorama_fish_eye</i></mat-cell>
-          </ng-container>
+    <ng-container matColumnDef="Death">
+      <mat-header-cell *matHeaderCellDef> Died </mat-header-cell>
+      <mat-cell *matCellDef="let pointValue"><i class="material-icons"
+          *ngIf="pointValue.Death === true">remove_circle</i><i class="material-icons"
+          *ngIf="pointValue.Death === false">panorama_fish_eye</i></mat-cell>
+    </ng-container>
 
-          <ng-container matColumnDef="BigKill">
-              <mat-header-cell *matHeaderCellDef> Big Kill </mat-header-cell>
-              <mat-cell *matCellDef="let pointValue"><i class="material-icons" *ngIf="pointValue.BigKill === true">add_circle</i><i class="material-icons" *ngIf="pointValue.BigKill === false">panorama_fish_eye</i></mat-cell>
-            </ng-container>
+    <ng-container matColumnDef="BigKill">
+      <mat-header-cell *matHeaderCellDef> Big Kill </mat-header-cell>
+      <mat-cell *matCellDef="let pointValue"><i class="material-icons"
+          *ngIf="pointValue.BigKill === true">add_circle</i><i class="material-icons"
+          *ngIf="pointValue.BigKill === false">panorama_fish_eye</i></mat-cell>
+    </ng-container>
 
     <ng-container matColumnDef="buttons">
       <mat-header-cell *matHeaderCellDef> Edit / Delete </mat-header-cell>
       <mat-cell *matCellDef="let pointValue">
-        <div class="button">
-        <i mat-icon class="material-icons clickable" routerLink="/pointvalues/edit/{{pointValue.PointValueId}}">edit</i>
-        <i class="material-icons clickable" routerLink="/pointvalues/delete/{{pointValue.PointValueId}}">delete</i>
-      </div>
+        <div class="">
+          <i mat-icon class="material-icons clickable"
+            routerLink="/pointvalues/edit/{{pointValue.PointValueId}}">edit</i>
+          <i class="material-icons clickable" routerLink="/pointvalues/delete/{{pointValue.PointValueId}}">delete</i>
+        </div>
       </mat-cell>
     </ng-container>
 

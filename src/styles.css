@@ -1,17 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
 @import '../node_modules/@angular/material/prebuilt-themes/indigo-pink.css';
 
 html {
     font-family: 'Cinzel Decorative', cursive;
 }
 
+.primary {
+  background-color: black;
+}
+
 footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  /* Set the fixed height of the footer here */
   height: 30px;
-  line-height: 30px; /* Vertically center the text there */
+  line-height: 30px;
   margin: 0px auto;
   max-width: auto;
   background: linear-gradient(
@@ -37,6 +39,10 @@ footer {
 
 .clickable {
   cursor: pointer;
+}
+
+.button {
+  background-color: black;
 }
 
 body{

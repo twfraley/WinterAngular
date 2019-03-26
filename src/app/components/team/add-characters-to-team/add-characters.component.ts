@@ -6,6 +6,7 @@ import { TeamDetail } from 'src/app/models/TeamDetail';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TeamService } from 'src/app/services/team.service';
 import { CharacterService } from 'src/app/services/character.service';
+import { _getTestBedRender3 } from '@angular/core/testing/src/r3_test_bed';
 
 @Component({
   selector: 'app-add-characters',
@@ -48,6 +49,10 @@ export class AddCharactersToTeamComponent implements OnInit {
       this._teamService.getAllButTeam(routeData.get('id')).subscribe(
         (characters: Character[]) => this._charactersNotOnTeam = characters);
     });
+  }
+
+  teamLength(){
+    return this._team.Characters.length < 5;
   }
 
 }

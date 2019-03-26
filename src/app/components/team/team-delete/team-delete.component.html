@@ -1,16 +1,29 @@
-<h1>Delete</h1>
+<h1>Delete Team</h1>
 
 <div *ngIf="team">
-  <div class=container>
-    <h2>{{team.TeamName}}</h2>
-    <h4 [hidden]>TeamId: {{team.TeamId}}</h4>
-  </div>
+<div class=container>
+  <h2>{{team.TeamName}}</h2>
 
-  <div class="list-group">
-    <div *ngFor="let character of team.Characters" class="list-group-item">
-      {{character.CharacterName}}</div>
+  <button mat-button class="button text-light" style="display:block; margin-right: auto; margin-left: auto; width: 25%;" routerLink="/team">Back To List</button>
+</div>
+<div class="list-group">
+  <div *ngFor="let character of team.Characters" class="list-group-item bg-transparent border-0 my-1 p-0">
+    <div class="row list-row">
+      <div class="col-2 offset-2">
+        <img src="{{character.ImageLink}}" class="med-img-circle clickable" routerLink="/characters/detail/{{ character.CharacterId }}">
+      </div>
+      <div class="col col-2 pt-4">
+        {{character.CharacterName}}
+      </div>
+      <div class="col-2 pt-4">
+        {{character.House}}
+      </div>
+      <div *ngFor="let character of team.Characters"></div>
+    </div>
   </div>
+  <a mat-raised-button class="deleteButton button text-light"  (click)="deleteTeam()">Delete Team</a>
+<hr>
 
-  <button mat-flat-button color="accent" (click)="deleteTeam()">Delete Team</button>
+</div>
 
 </div>
