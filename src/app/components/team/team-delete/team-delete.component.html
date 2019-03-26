@@ -1,16 +1,46 @@
-<h1>Delete</h1>
+<h1>Delete Team</h1>
 
 <div *ngIf="team">
-  <div class=container>
-    <h2>{{team.TeamName}}</h2>
-    <h4 [hidden]>TeamId: {{team.TeamId}}</h4>
-  </div>
+<div class=container>
+  <h2>{{team.TeamName}}</h2>
 
+  <button mat-button color="primary" routerLink="/team">Back To List</button>
+</div>
+<div class="list-group">
+  <div *ngFor="let character of team.Characters" class="list-group-item bg-transparent border-0 my-1 p-0">
+    <div class="row list-row">
+      <div class="col-2 offset-2">
+        <img src="{{character.ImageLink}}" class="med-img-circle clickable" routerLink="/characters/detail/{{ character.CharacterId }}">
+      </div>
+      <div class="col col-2 pt-4">
+        {{character.CharacterName}}
+      </div>
+      <div class="col-2 pt-4">
+        {{character.House}}
+      </div>
+      <!-- 
+        Doesn't work without serious work on team-detail.component.ts
+        <div class="col-2 pt-3">
+        Points earned:
+        <hr>
+        {{(character.CharacterId)}}
+      </div> -->
+      <div *ngFor="let character of team.Characters"></div>
+    </div>
+  </div>
+  <!-- <button mat-flat-button color="accent" (click)="deleteTeam()">Delete Team</button> -->
+  <a mat-raised-button class="deleteButton" color="primary" (click)="deleteTeam()">Delete Team</a>
+<hr>
+
+</div>
+
+
+<!-- 
   <div class="list-group">
     <div *ngFor="let character of team.Characters" class="list-group-item">
       {{character.CharacterName}}</div>
-  </div>
+  </div> -->
 
-  <button mat-flat-button color="accent" (click)="deleteTeam()">Delete Team</button>
+
 
 </div>
