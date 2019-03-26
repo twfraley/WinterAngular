@@ -17,7 +17,7 @@ i:hover {
 h1 {
     text-align:center;
     margin-top: 50px;
-    text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 7px rgb(15, 15, 17);
+    text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 7px rgb(255, 255, 255), 0 0 5px rgb(235, 230, 230);
 }
 
 .createButton {
@@ -33,7 +33,7 @@ h1 {
 }
 
 .mat-cell.mat-cell {
-    font-size: 25px;
+    font-size: 20px;
 }
 
 mat-header-cell {
