@@ -2,10 +2,11 @@
 
 <div *ngIf="_team">
 
-  <div class=container>
+  <div class="container">
     <h2>{{_team.TeamName}}</h2>
-    <div style="display: none !important">TeamId: {{_team.TeamId}}</div>
-    <button mat-button color="primary" routerLink="/team">Back To List</button>
+    <div class="w-100 justify-content-center">
+      <button mat-raised-button type="button" routerLink="/team" class="button btn btn-dark text-light">Back To List</button>
+    </div>
   </div>
 
   <div class="list-group mx-5">
@@ -28,7 +29,7 @@
   </div>
 
   <div class="m-5">
-    <h2>Add Characters to team:</h2>
+    <h2 class="text-center">Add Characters to team:</h2>
   </div>
   <hr>
 
@@ -45,8 +46,11 @@
           <div class="col-2 pt-4">
             {{character.House}}
           </div>
-          <div class="col-2 py-4 clickable" (click)="addCharacter(character)">
+          <div *ngIf="teamLength()" class="col-2 pt-4 clickable" (click)="addCharacter(character)">
             Add {{character.CharacterName}} to team
+          </div>
+          <div *ngIf="!teamLength()" class="col-2 pt-4">
+            Only 5 characters per team.
           </div>
         </div>
       </div>
