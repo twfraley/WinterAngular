@@ -4,7 +4,7 @@
 <div class=container>
   <h2>{{team.TeamName}}</h2>
 
-  <button mat-button color="primary" routerLink="/team">Back To List</button>
+  <button mat-button class="button text-light" style="display:block; margin-right: auto; margin-left: auto; width: 25%;" routerLink="/team">Back To List</button>
 </div>
 <div class="list-group">
   <div *ngFor="let character of team.Characters" class="list-group-item bg-transparent border-0 my-1 p-0">
@@ -18,29 +18,12 @@
       <div class="col-2 pt-4">
         {{character.House}}
       </div>
-      <!-- 
-        Doesn't work without serious work on team-detail.component.ts
-        <div class="col-2 pt-3">
-        Points earned:
-        <hr>
-        {{(character.CharacterId)}}
-      </div> -->
       <div *ngFor="let character of team.Characters"></div>
     </div>
   </div>
-  <!-- <button mat-flat-button color="accent" (click)="deleteTeam()">Delete Team</button> -->
-  <a mat-raised-button class="deleteButton" color="primary" (click)="deleteTeam()">Delete Team</a>
+  <a mat-raised-button class="deleteButton button text-light"  (click)="deleteTeam()">Delete Team</a>
 <hr>
 
 </div>
-
-
-<!-- 
-  <div class="list-group">
-    <div *ngFor="let character of team.Characters" class="list-group-item">
-      {{character.CharacterName}}</div>
-  </div> -->
-
-
 
 </div>

@@ -26,5 +26,8 @@ export class TeamIndexComponent implements OnInit {
     });
   }
   
+  loggedInCheck() {
+    return localStorage.getItem('isLoggedIn') === "true";
+  }
 
 }

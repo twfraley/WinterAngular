@@ -41,4 +41,8 @@ export class PointValueIndexComponent implements OnInit {
     return (localStorage.getItem('role') === 'SuperAdmin');
   }
 
+  loggedInCheck() {
+    return localStorage.getItem('isLoggedIn') === "true";
+  }
+
 }

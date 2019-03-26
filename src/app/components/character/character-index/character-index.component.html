@@ -1,20 +1,23 @@
-<h1>Character Index</h1>
+<h1>Characters in Westeros Fantasy League</h1>
 
-<a *ngIf="authCheck()" mat-raised-button class="createButton" color="primary" routerLink="/characters/create">Create New</a>
+<a *ngIf="authCheck()" mat-raised-button class="createButton button text-light" routerLink="/characters/create">Create New</a>
 <hr>
-<div class="container">
+
+<h2 *ngIf="!loggedInCheck()"> Log in to view characters. </h2>
+
+<div *ngIf="loggedInCheck()" class="container">
   <img
     src="https://png2.kisspng.com/sh/f989f7318a90a56927ef9de56696e298/L0KzQYm3VMA4N6R9fZH0aYP2gLBuTfJzaZ8yiAZqcnuwhLn5hfUubapqfJ97YYbofn7rgfVvbaNAi599YYLqccPChf4ubJJmReRqdnXxPYbog8hja5VmedVtNEKzPoi3VMU2OmU5Sac7M0GzRIqBVscxP2oziNDw/kisspng-bran-stark-three-eyed-raven-daenerys-targaryen-daa-raven-5ac8bcdaacd420.7045524415231049867079.png"
     class="center" style="width: 20%;">
 </div>
 <br>
-<div>
+<div *ngIf="loggedInCheck()">
   <mat-table #table [dataSource]="dataSource">
     <mat-header-row *matHeaderRowDef="characterColumnNames" class="my-2"></mat-header-row>
     <mat-row *matRowDef="let row; columns: characterColumnNames;" class="my-2"></mat-row>
 
     <ng-container matColumnDef="CharacterName">
-      <mat-header-cell *matHeaderCellDef> Character Name </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
       <mat-cell *matCellDef="let character"> {{character.CharacterName}} </mat-cell>
     </ng-container>
 
