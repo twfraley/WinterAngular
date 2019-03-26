@@ -12,8 +12,8 @@
   <div class="list-group">
     <div *ngFor="let character of team.Characters" class="list-group-item bg-transparent border-0 my-1 p-0">
       <div class="row list-row">
-        <div class="col-2 offset-1">
-          <img src="{{character.ImageLink}}" class="med-img-circle">
+        <div class="col-2 offset-2">
+          <img src="{{character.ImageLink}}" class="med-img-circle clickable">
         </div>
         <div class="col col-2 pt-4">
           {{character.CharacterName}}
@@ -21,9 +21,13 @@
         <div class="col-2 pt-4">
           {{character.House}}
         </div>
-        <div class="col-2 pt-3">
+        <!-- 
+          Doesn't work without serious work on team-detail.component.ts
+          <div class="col-2 pt-3">
           Points earned:
-        </div>
+          <hr>
+          {{(character.CharacterId)}}
+        </div> -->
         <div *ngFor="let character of team.Characters"></div>
       </div>
     </div>

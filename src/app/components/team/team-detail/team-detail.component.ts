@@ -32,7 +32,8 @@ export class TeamDetailComponent implements OnInit {
     return this.team.UserId === localStorage.getItem('userId');
   }
 
+  // Totally not functional at the moment 
   getCharacterPoints(characterId: number) {
-    return this._pointValueService.getPointValueByCharacterId(characterId).subscribe( (pointValue: PointValue) => {pointValue});
+    return this._pointValueService.getPointValueByCharacterId(characterId).subscribe( (pointValue: PointValue) => {});
   }
 }
