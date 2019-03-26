@@ -45,8 +45,11 @@
           <div class="col-2 pt-4">
             {{character.House}}
           </div>
-          <div class="col-2 py-4 clickable" (click)="addCharacter(character)">
+          <div *ngIf="teamLength()" class="col-2 pt-4 clickable" (click)="addCharacter(character)">
             Add {{character.CharacterName}} to team
+          </div>
+          <div *ngIf="!teamLength()" class="col-2 pt-4">
+            Only 5 characters per team.
           </div>
         </div>
       </div>
