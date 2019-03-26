@@ -37,8 +37,8 @@
 
 
   <mat-table #table [dataSource]="dataSource">
-    <mat-header-row *matHeaderRowDef="pointValueColumnNames"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: pointValueColumnNames;"></mat-row>
+    <mat-header-row *matHeaderRowDef="pointValueColumnNames" class="my-2"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: pointValueColumnNames;" class="my-2"></mat-row>
 
     <!-- <ng-container matColumnDef="CharacterId">
       <mat-header-cell *matHeaderCellDef> Character ID# </mat-header-cell>
