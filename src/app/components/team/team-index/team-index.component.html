@@ -15,12 +15,12 @@
 
     <ng-container matColumnDef="TeamName">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Team Name </mat-header-cell>
-      <mat-cell *matCellDef="let teamDetail"> {{teamDetail.TeamName}} </mat-cell>
+      <mat-cell *matCellDef="let teamDetail" class="clickable" routerLink="/team/detail/{{teamDetail.TeamId}}"> {{teamDetail.TeamName}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="TotalPoints">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Total Points </mat-header-cell>
-      <mat-cell *matCellDef="let teamDetail" routerLink="/team/detail/{{teamDetail.TeamId}}"> {{teamDetail.TotalPoints}} </mat-cell>
+      <mat-cell *matCellDef="let teamDetail"> {{teamDetail.TotalPoints}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="Characters">

@@ -1,6 +1,6 @@
 <h1>Character Index</h1>
 
-<a mat-raised-button class="createButton" color="primary" routerLink="/characters/create">Create New</a>
+<a *ngIf="authCheck()" mat-raised-button class="createButton" color="primary" routerLink="/characters/create">Create New</a>
 <hr>
 <div class="container">
   <img

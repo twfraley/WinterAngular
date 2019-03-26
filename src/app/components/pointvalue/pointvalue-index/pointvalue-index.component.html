@@ -1,5 +1,5 @@
 <h1>PointValue Index</h1>
-<a mat-raised-button class="createButton" color="primary" routerLink="/pointvalues/create">Create New</a>
+<a *ngIf="authCheck()" mat-raised-button class="createButton" color="primary" routerLink="/pointvalues/create">Create New</a>
 <hr>
 <table class="tg">
     <tr>
