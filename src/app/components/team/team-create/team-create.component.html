@@ -1,8 +1,8 @@
 <h1>Create a Team</h1>
 <hr>
 <form #f="ngForm" (ngSubmit)="onSubmit()" [formGroup]="teamForm">
-  <div class="align-center">
-    <div>
+  <div class="control-group">
+    <div class="form-group">
       <mat-form-field>
         <input matInput placeholder="Team Name" formControlName="TeamName" type="TeamName" required />
       </mat-form-field>
