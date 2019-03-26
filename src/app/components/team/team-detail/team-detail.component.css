@@ -25,3 +25,30 @@ h1 {
     margin-top: 50px;
     text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 7px rgb(255, 255, 255), 0 0 5px rgb(235, 230, 230);
 }
+
+h2 {
+    text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 7px rgb(255, 255, 255), 0 0 5px rgb(235, 230, 230);
+    text-align: center;
+}
+
+h4{
+    text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 7px rgb(255, 255, 255), 0 0 5px rgb(235, 230, 230);
+    text-align: center;
+}
+
+.buttonContainer {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 33%;
+}
+
+button {
+    margin-right: 1%;
+}
+
+button:hover {
+    text-decoration: underline;
+}
