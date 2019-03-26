@@ -10,7 +10,7 @@ import { MatTableDataSource } from '@angular/material';
 })
 export class CharacterIndexComponent implements OnInit {
 
-  characterColumnNames = ['ImageLink', 'CharacterName', 'House', 'buttons'];
+  characterColumnNames: string[];
 
   constructor(private _characterService: CharacterService) { }
 
@@ -20,6 +20,16 @@ export class CharacterIndexComponent implements OnInit {
     this._characterService.getCharacters().subscribe((characters: Character[]) => {
       this.dataSource = new MatTableDataSource<Character>(characters);
     });
+    if (this.authCheck()){
+      this.characterColumnNames = ['ImageLink', 'CharacterName', 'House', 'buttons'];
+    }
+    if (!this.authCheck()){
+      this.characterColumnNames = ['ImageLink', 'CharacterName', 'House'];
+    }
+  }
+
+  authCheck(){
+    return (localStorage.getItem('role') === 'SuperAdmin');
   }
 
 }
