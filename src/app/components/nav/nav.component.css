@@ -1,4 +1,4 @@
-
+/* 
 .container-fluid {
     display: inline-flex;
     font-size: 20px;
@@ -45,4 +45,64 @@ a:hover {
 nav {
     margin-top: 0;
     padding-top: 0;
-}
+} */
+
+* {
+    transition: all 0.3s ease;
+  }
+
+
+
+#main-ul {
+    list-style-type: none;
+    display: inline-flex;
+    justify-content: center;
+    margin: 0px auto;
+    max-width: auto;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(5, 5, 5, 0.2) 25%,
+      rgba(0, 0, 0, 0.2) 75%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    margin-bottom: 20px;
+  }
+  
+  #main-ul li {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-shadow: 0 0 5px rgba(19, 17, 17, 0.507), 0 0 7px rgb(15, 15, 17);
+  }
+  
+  #main-ul a {
+    list-style-type: none;
+    color: rgba(255, 255, 255, 0.842);
+  }
+  
+  #main-ul li:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1),
+      inset 0 0 1px rgba(255, 255, 255, 0.836);
+    background: rgba(0, 0, 0, 0.377);
+  }
+  
+  /*media queries*/
+  @media screen and (min-width: 0px) {
+    .toggle-nav {
+      display: block;
+    }
+    #main-ul {
+      display: inline-flex;
+    }
+  }
+  
+  @media screen and (min-width: 700px) {
+    .toggle-nav {
+      display: none;
+    }
+    #main-ul {
+      display: flex;
+    }
+  }
+  
+  

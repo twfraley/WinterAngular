@@ -2,6 +2,7 @@
 
 <hr>
 
+<div class="container">
 <div *ngIf="pointValue">
     <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="editPointValueForm">
         <div>
@@ -37,7 +38,8 @@
         </div>
         </div>
         <button mat-raised-button class="nav-btn" color="primary" type="submit">Save</button>
-        <br>
         <a mat-button routerLink="/pointvalues">Back To List</a>
+        <br>
     </form>
+  </div>
 </div>

@@ -1,5 +1,5 @@
 <h1>Teams</h1>
-<a mat-raised-button color="primary" routerLink="/team/create">Create New</a>
+<a mat-raised-button class="createButton" color="primary" routerLink="/team/create">Create New</a>
 <hr>
 
 <div>
@@ -7,15 +7,15 @@
 
     <mat-header-row *matHeaderRowDef="teamColumnNames" class="teamTableRow"></mat-header-row>
     <mat-row *matRowDef="let row; columns: teamColumnNames;" class="teamTableRow" ></mat-row>
-
+<!-- 
     <ng-container matColumnDef="details">
       <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
       <mat-cell *matCellDef="let teamDetail" routerLink="/team/detail/{{teamDetail.TeamId}}"><i class="material-icons">account_circle</i></mat-cell>
-    </ng-container>
+    </ng-container> -->
 
     <ng-container matColumnDef="TeamName">
-      <mat-header-cell *matHeaderCellDef> Team Name </mat-header-cell>
-      <mat-cell *matCellDef="let teamDetail"> {{teamDetail.TeamName}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Team Name </mat-header-cell>
+      <mat-cell *matCellDef="let teamDetail" class="clickable" routerLink="/team/detail/{{teamDetail.TeamId}}"> {{teamDetail.TeamName}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="TotalPoints">

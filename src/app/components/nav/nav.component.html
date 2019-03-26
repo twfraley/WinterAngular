@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm navbar-dark fixed-top">
+<!-- <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
   <a routerLink="/" class="navbar-brand">{{ appTitle }}</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
@@ -15,4 +15,19 @@
           Out</a></li>
     </ul>
   </div>
-</nav>
+</nav> -->
+<body>
+<nav class="fixed-top">
+    <ul id="main-ul">
+        <li><a routerLink="/"><b>{{ appTitle }}</b></a></li>
+        <li><a routerLink="/characters"><b>Characters</b></a></li>
+        <li><a routerLink="/team"><b>Team</b></a></li>
+        <li><a routerLink="/pointvalues"><b>Points</b></a></li>
+        <li><a routerLink="/contact"><b>Contact Us</b></a></li>
+        <li *ngIf="isLoggedIn() !== 'true'"><a routerLink="/user/registration"
+            *ngIf="isLoggedIn() !== 'true'"><b>Sign Up / Log in</b></a></li>
+        <li><a routerLink="/user/logout" *ngIf="isLoggedIn() === 'true'"><b>Log
+            Out</b></a></li>
+    </ul>
+  </nav>
+</body>
