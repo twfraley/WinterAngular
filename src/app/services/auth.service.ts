@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { RegisterUser } from '../models/RegisterUser';
 import { Token } from '../models/Token';
 import { Observable, Subject } from 'rxjs';
+import { UserInfo } from '../models/UserInfo';
 
 const Api_Url = 'https://westerosfantasyleague.azurewebsites.net';
 
@@ -11,10 +12,9 @@ const Api_Url = 'https://westerosfantasyleague.azurewebsites.net';
   providedIn: 'root'
 })
 export class AuthService {
-  userInfo: Token;
   isLoggedIn = new Subject<boolean>();
+  role: string;
 
-// tslint:disable-next-line: variable-name
   constructor(private _http: HttpClient, private _router: Router) { }
 
   register(regUserData: RegisterUser) {
@@ -28,6 +28,10 @@ export class AuthService {
       localStorage.setItem('id_token', token.access_token);
       this.isLoggedIn.next(true);
       localStorage.setItem('isLoggedIn', 'true');
+      this.currentUser().subscribe((userInfo: UserInfo ) => {
+        localStorage.setItem('role', `${userInfo.Role}`);
+        localStorage.setItem('userId', `${userInfo.UserId}`);
+      });
       this._router.navigate(['/home']);
     });
   }
@@ -49,6 +53,6 @@ export class AuthService {
   }
 
   private setHeader(): HttpHeaders {
-    return new HttpHeaders().set('Authoriation', `Bearer ${localStorage.getItem('id_token')}`);
+    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
   }
 }
