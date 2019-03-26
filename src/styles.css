@@ -5,6 +5,36 @@ html {
     font-family: 'Cinzel Decorative', cursive;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 30px;
+  line-height: 30px; /* Vertically center the text there */
+  margin: 0px auto;
+  max-width: auto;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(5, 5, 5, 0.582) 25%,
+    rgba(0, 0, 0, 0.2) 75%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  color: white;
+  text-shadow: 0 0 5px rgba(19, 17, 17, 0.507), 0 0 7px rgb(15, 15, 17);
+  text-align: center;
+}
+
+.footer i {
+  text-shadow: 0 0 5px rgba(19, 17, 17, 0.507), 0 0 7px rgb(15, 15, 17);
+}
+
+.footer strong {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .clickable {
   cursor: pointer;
 }

@@ -18,32 +18,31 @@
       </div>
       <div>
         <mat-checkbox [indeterminate]="true" formControlName="SurvivedEpisode">
-          <input matInput placeholder="SurvivedEpisode" formControlName="SurvivedEpisode" type="SurvivedEpisode" />
+          <i>Survived Episode</i>
         </mat-checkbox>
       </div>
       <div>
         <mat-checkbox [indeterminate]="true" formControlName="EpisodeAppearance">
-          <input matInput placeholder="EpisodeAppearance" formControlName="EpisodeAppearance"
-            type="EpisodeAppearance" />
+          <i>Episode Appearance</i>
         </mat-checkbox>
       </div>
       <div>
         <mat-checkbox [indeterminate]="true" formControlName="GetKill">
-          <input matInput placeholder="GetKill" formControlName="GetKill" type="GetKill" />
+          <i>Get Kill</i>
         </mat-checkbox>
       </div>
       <div>
         <mat-checkbox [indeterminate]="true" formControlName="Death">
-          <input matInput placeholder="Death" formControlName="Death" type="Death" />
+          <i>Death</i>
         </mat-checkbox>
       </div>
       <div>
         <mat-checkbox [indeterminate]="true" formControlName="BigKill">
-          <input matInput placeholder="BigKill" formControlName="BigKill" type="BigKill" />
+          <i>Big Kill</i>
         </mat-checkbox>
       </div>
     </div>
     <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Point Value</button>
+    <a mat-button color="accent" routerLink="/pointvalues">Back to List</a>
     <br>
-    <a mat-button routerLink="/pointvalues">Back to List</a>
   </form>

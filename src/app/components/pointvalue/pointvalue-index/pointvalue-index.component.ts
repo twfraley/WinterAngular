@@ -15,7 +15,7 @@ export class PointValueIndexComponent implements OnInit {
   value: boolean = true;
   character: Character;
 
-  pointValueColumnNames = ['CharacterId', 'SurvivedEpisode', 'EpisodeAppearance', 'GetKill', 'Death', 'BigKill', 'buttons'];
+  pointValueColumnNames = [];
 
   constructor(private _pointValueService: PointValueService, private _characterService: CharacterService) { }
 
@@ -26,9 +26,19 @@ export class PointValueIndexComponent implements OnInit {
     this._pointValueService.getPointValues().subscribe((pointValues: PointValue[]) => {
       this.dataSource = new MatTableDataSource<PointValue>(pointValues);
     });
-    
-      this._characterService.getCharacters().subscribe((characterList: Character[]) => this.characters = characterList);
-      }
-  
+
+    this._characterService.getCharacters().subscribe((characterList: Character[]) => this.characters = characterList);
+
+    if (this.authCheck()){
+      this.pointValueColumnNames = ['CharacterId', 'SurvivedEpisode', 'EpisodeAppearance', 'GetKill', 'Death', 'BigKill', 'buttons'];
+    }
+    if (!this.authCheck()){
+      this.pointValueColumnNames = ['CharacterId', 'SurvivedEpisode', 'EpisodeAppearance', 'GetKill', 'Death', 'BigKill'];
+    }
+  }
+
+  authCheck() {
+    return (localStorage.getItem('role') === 'SuperAdmin');
+  }
 
 }

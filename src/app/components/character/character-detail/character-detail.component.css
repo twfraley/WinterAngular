@@ -18,7 +18,7 @@
 h1 {
     text-align:center;
     margin-top: 50px;
-    text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 7px rgb(15, 15, 17);
+    text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 7px rgb(255, 255, 255), 0 0 5px rgb(235, 230, 230);
 }
 
 h2 {

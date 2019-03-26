@@ -5,10 +5,22 @@
 form {
     justify-content: center;
     text-align: center;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: auto;
+    color: black;
+    background: linear-gradient(
+          to bottom, #ffffff40,rgba(245, 245, 245, 0.644)
+      ); 
+      width: 80%;
+      margin-left: 10%;
+      margin-right: auto;
+      display: block;
+      padding-top: 2%;
 }
 
 h1 {
     text-align:center;
     margin-top: 50px;
-    text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 7px rgb(15, 15, 17);
+    text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 7px rgb(255, 255, 255), 0 0 5px rgb(235, 230, 230);
 }
+
