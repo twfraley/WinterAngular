@@ -1,7 +1,13 @@
 h1 {
+    padding-top: 1%;
+    padding-bottom: 1%;
     text-align:center;
     margin-top: 50px;
-    text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 7px rgb(15, 15, 17);
+    text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 7px rgb(255, 255, 255), 0 0 5px rgb(235, 230, 230);
+}
+
+img {
+    padding-bottom: 3%;
 }
 
 h3 {
@@ -9,23 +15,31 @@ h3 {
 }
 
 .container {
-    position: relative;
+    margin-top: 5%;
     text-align: center;
-    color: black;
+    text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 7px rgb(255, 255, 255), 0 0 5px rgb(235, 230, 230);
+    box-shadow: 8px 8px 6px 3px rgba(0, 0, 0, 0.36);
+    border: solid black 3px;
 }
 
-.centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-size-adjust: 200%;
+.container {
+    font-family: 'Cinzel Decorative', cursive;
+  font-size: 14.5px;
+  color: black;
+  background: linear-gradient(
+        to bottom, #ffffff40,rgba(245, 245, 245, 0.644)
+    ); 
+    width: 50%;
+    height: 100%;
+    padding-bottom: 40px;
+    border-top-left-radius: 30%;
+    border-top-right-radius: 30%;
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 30%;
 }
 
 div.a {
     line-height: 2.5;
-}
-
-.container {
-    margin-top: 50px;
+    padding-right: 10%;
+    padding-left: 10%;
 }

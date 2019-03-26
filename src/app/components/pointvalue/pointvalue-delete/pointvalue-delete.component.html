@@ -4,13 +4,26 @@
 
 <div *ngIf="pointValue">
     <div class=container>
-        <h2>{{pointValue.PointValueId}}</h2>      
-        <!-- <img [src]="pointValue.character.ImageLink" alt="pointValue.CharacterId"> -->
-      <h4>SurvivedEpisode: {{pointValue.SurvivedEpisode}}</h4>
-      <h4>EpisodeAppearance: {{pointValue.EpisodeAppearance}}</h4>
-      <h4>GetKill: {{pointValue.GetKill}}</h4>
-      <h4>Death: {{pointValue.Death}}</h4>
-      <h4>BigKill: {{pointValue.BigKill}}</h4>
+        <div>
+            <p>SurvivedEpisode :<mat-checkbox [checked]="pointValue.SurvivedEpisode" type="SurvivedEpisode">
+              </mat-checkbox></p>
+          </div>
+          <div>
+              <p>Episode Appearance :<mat-checkbox [checked]="pointValue.EpisodeAppearance" type="EpisodeAppearance">
+              </mat-checkbox></p>
+            </div>
+            <div>
+              <p>GetKill :<mat-checkbox [checked]="pointValue.GetKill" type="GetKill">
+              </mat-checkbox></p>
+            </div>
+            <div>
+              <p>Death :<mat-checkbox [checked]="pointValue.Death" type="Death">
+              </mat-checkbox></p>
+            </div>
+            <div>
+              <p>Big Kill :<mat-checkbox [checked]="pointValue.BigKill" type="BigKill">
+              </mat-checkbox></p>
+            </div>
       <button mat-button color="accent" (click)="onDelete()">Delete</button>
       <button mat-button color="primary" routerLink="/pointvalues">Back To List</button>
     </div>

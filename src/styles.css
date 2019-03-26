@@ -5,6 +5,27 @@ html {
     font-family: 'Cinzel Decorative', cursive;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 30px;
+  line-height: 30px; /* Vertically center the text there */
+  background-color: #000000b9;
+  color: white;
+  text-shadow: 0 0 5px rgba(19, 17, 17, 0.507), 0 0 7px rgb(15, 15, 17);
+}
+
+.footer i {
+  text-shadow: 0 0 5px rgba(19, 17, 17, 0.507), 0 0 7px rgb(15, 15, 17);
+}
+
+.footer strong {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .clickable {
   cursor: pointer;
 }
