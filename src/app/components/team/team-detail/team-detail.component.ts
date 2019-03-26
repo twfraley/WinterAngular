@@ -28,6 +28,10 @@ export class TeamDetailComponent implements OnInit {
 
   }
 
+  ownerCheck() {
+    return this.team.UserId === localStorage.getItem('userId');
+  }
+
   getCharacterPoints(characterId: number) {
     return this._pointValueService.getPointValueByCharacterId(characterId).subscribe( (pointValue: PointValue) => {pointValue});
   }
