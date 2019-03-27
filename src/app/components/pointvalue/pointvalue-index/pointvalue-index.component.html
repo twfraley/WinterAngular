@@ -40,12 +40,12 @@
 <br>
 
 <div *ngIf="loggedInCheck()">
-  <mat-table #table [dataSource]="dataSource">
+  <mat-table #table [dataSource]="dataSource" matSort matSortDisableClear>
     <mat-header-row *matHeaderRowDef="pointValueColumnNames" class="my-2"></mat-header-row>
     <mat-row *matRowDef="let row; columns: pointValueColumnNames;" class="my-2"></mat-row>
 
     <ng-container matColumnDef="CharacterId">
-      <mat-header-cell *matHeaderCellDef> Character </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Character </mat-header-cell>
       <mat-cell *matCellDef="let pointValue">
         <div *ngFor="let character of characters"> <img *ngIf="pointValue.CharacterId === character.CharacterId"
             [src]="character.ImageLink" style="width:40%; height: 40%; border-radius: 50%;"

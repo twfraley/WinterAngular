@@ -12,17 +12,17 @@
 </div>
 <br>
 <div *ngIf="loggedInCheck()">
-  <mat-table #table [dataSource]="dataSource">
+  <mat-table #table [dataSource]="dataSource" matSort matSortDisableClear>
     <mat-header-row *matHeaderRowDef="characterColumnNames" class="my-2"></mat-header-row>
     <mat-row *matRowDef="let row; columns: characterColumnNames;" class="my-2"></mat-row>
 
     <ng-container matColumnDef="CharacterName">
-      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
       <mat-cell *matCellDef="let character"> {{character.CharacterName}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="House">
-      <mat-header-cell *matHeaderCellDef> House / Affiliation </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> House / Affiliation </mat-header-cell>
       <mat-cell *matCellDef="let character">{{character.House}}
 
         <div *ngIf="character.House === 'House Stark'"><img

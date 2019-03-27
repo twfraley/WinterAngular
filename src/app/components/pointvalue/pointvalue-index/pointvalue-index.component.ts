@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { PointValueService } from 'src/app/services/pointValue.service';
 import { PointValue } from 'src/app/models/PointValue';
-import { MatTableDataSource } from '@angular/material';
+import { MatTableDataSource, MatSort } from '@angular/material';
 import { CharacterService } from 'src/app/services/character.service';
 import { Character } from 'src/app/models/Character';
 
@@ -22,9 +22,12 @@ export class PointValueIndexComponent implements OnInit {
   characters: Character[];
   dataSource: MatTableDataSource<PointValue>;
 
+  @ViewChild(MatSort) sort: MatSort;
+
   ngOnInit() {
     this._pointValueService.getPointValues().subscribe((pointValues: PointValue[]) => {
       this.dataSource = new MatTableDataSource<PointValue>(pointValues);
+      this.dataSource.sort = this.sort;
     });
 
     this._characterService.getCharacters().subscribe((characterList: Character[]) => this.characters = characterList);

@@ -1,5 +1,5 @@
 <h1>Teams in Westeros Fantasy League</h1>
-<a mat-raised-button class="createButton button text-light" routerLink="/team/create">Create New</a>
+<a *ngIf="loggedInCheck()" mat-raised-button class="createButton button text-light" routerLink="/team/create">Create New</a>
 <hr>
 
 <h2 *ngIf="!loggedInCheck()"> Log in to view teams. </h2>
